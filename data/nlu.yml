@@ -1,0 +1,344 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ey
+    - hi
+    - hello
+    - hola
+    - saludos
+    - buenos días
+    - buenas tardes
+    - buenas
+    - buenas noches
+    - oye bot
+    - hola bot
+    - saludos bot
+    - ey bot
+    - buenos días bot
+    - buenas tardes bot
+    - buenas bot
+    - vamos allá
+    - vamos
+    - vamos bot
+    
+- intent: goodbye
+  examples: |
+    - adiós
+    - nos vemos
+    - buenas noches
+    - bye
+    - que tengas un buen día
+    - hasta luego
+    - hasta la vista
+    - hasta pronto
+    - me voy
+
+- intent: affirm
+  examples: |
+    - sí
+    - afirmativo
+    - por supuesto
+    - oki
+    - okey
+    - ok
+    - claro
+    - correcto
+    - seguro
+    - vale
+    - yes
+    - seguro
+    - claro que sí
+    - de acuerdo
+
+- intent: deny
+  examples: |
+    - no
+    - para nada
+    - negativo
+    - incorrecto
+    - no quiero
+    - nada
+    - en absoluto
+    - claro que no
+    - ni hablar
+    - creo que no
+    - casi que no
+    - prefiero que no
+
+- intent: select_alcanforero
+  examples: |
+    - me gustaría consultarte acerca del alcanforero
+    - alcanforero
+    - el alcanforero
+    - elijo el alcanforero
+    - me gustaría saber acerca del alcanforero
+    - me gustaría preguntar sobre el alcanforero
+    - quiero el alcanforero
+    - quiero preguntar sobre el alcanforero
+    - quiero saber acerca del alcanforero
+    - quiero consultar acerca del alcanforero
+    - la especie que elijo es el alcanforero
+    - la planta que elijo es el alcanforero
+    - la planta sobre la que quiero preguntar es el alcanforero
+    - la planta de la que quiero saber es el alcanforero
+    - la planta acerca de la que quiero consultar es el alcanforero
+    - la planta que me gustaría conocer es el alcanforero
+    - la especie sobre la que quiero preguntar es el alcanforero
+    - la especie de la que quiero saber es el alcanforero
+    - la especie acerca de la que quiero consultar es el alcanforero
+    - la especie que me gustaría conocer es el alcanforero
+
+
+- intent: select_naranjo
+  examples: |
+    - me gustaría consultarte acerca del naranjo amargo
+    - naranjo amargo
+    - el naranjo amargo
+    - elijo el naranjo amargo
+    - me gustaría saber acerca del naranjo amargo
+    - me gustaría preguntar sobre el naranjo amargo
+    - quiero el naranjo amargo
+    - quiero preguntar sobre el naranjo amargo
+    - quiero saber acerca del naranjo amargo
+    - quiero consultar acerca del naranjo amargo
+    - la especie que elijo es el naranjo amargo
+    - la planta que elijo es el naranjo amargo
+    - la planta sobre la que quiero preguntar es el naranjo amargo
+    - la planta de la que quiero saber es el naranjo amargo
+    - la planta acerca de la que quiero consultar es el naranjo amargo
+    - la planta que me gustaría conocer es el naranjo amargo
+    - la especie sobre la que quiero preguntar es el naranjo amargo
+    - la especie de la que quiero saber es el naranjo amargo
+    - la especie acerca de la que quiero consultar es el naranjo amargo
+    - la especie que me gustaría conocer es el naranjo amargo
+
+- intent: select_jazmin
+  examples: |
+    - me gustaría consultarte acerca del jazmín
+    - jazmín
+    - el jazmín
+    - elijo el jazmín
+    - me gustaría saber acerca del jazmín
+    - me gustaría preguntar sobre el jazmín
+    - quiero el jazmín
+    - quiero preguntar sobre el jazmín
+    - quiero saber acerca del jazmín
+    - quiero consultar acerca del jazmín
+    - la especie que elijo es el jazmín
+    - la planta que elijo es el jazmín
+    - la planta sobre la que quiero preguntar es el jazmín
+    - la planta de la que quiero saber es el jazmín
+    - la planta acerca de la que quiero consultar es el jazmín
+    - la planta que me gustaría conocer es el jazmín
+    - la especie sobre la que quiero preguntar es el jazmín
+    - la especie de la que quiero saber es el jazmín
+    - la especie acerca de la que quiero consultar es el jazmín
+    - la especie que me gustaría conocer es el jazmín
+
+- intent: select_salvia
+  examples: |
+    - me gustaría consultarte acerca de la salvia
+    - salvia
+    - la salvia
+    - elijo la salvia
+    - me gustaría saber acerca de la salvia
+    - me gustaría preguntar sobre la salvia
+    - quiero la salvia
+    - quiero preguntar sobre la salvia
+    - quiero saber acerca de la salvia
+    - quiero consultar acerca de la salvia
+    - la especie que elijo es la salvia
+    - la planta que elijo es la salvia
+    - la planta sobre la que quiero preguntar es la salvia
+    - la planta de la que quiero saber es la salvia
+    - la planta acerca de la que quiero consultar es la salvia
+    - la planta que me gustaría conocer es la salvia
+    - la especie sobre la que quiero preguntar es la salvia
+    - la especie de la que quiero saber es la salvia
+    - la especie acerca de la que quiero consultar es la salvia
+    - la especie que me gustaría conocer es la salvia
+
+- intent: select_tomillo
+  examples: |
+    - me gustaría consultarte acerca del tomillo
+    - tomillo
+    - el tomillo
+    - elijo el tomillo
+    - me gustaría saber acerca del tomillo
+    - me gustaría preguntar sobre el tomillo
+    - quiero el tomillo
+    - quiero preguntar sobre el tomillo
+    - quiero saber acerca del tomillo
+    - quiero consultar acerca del tomillo
+    - la especie que elijo es el tomillo
+    - la planta que elijo es el tomillo
+    - la planta sobre la que quiero preguntar es el tomillo
+    - la planta de la que quiero saber es el tomillo
+    - la planta acerca de la que quiero consultar es el tomillo
+    - la planta que me gustaría conocer es el tomillo
+    - la especie sobre la que quiero preguntar es el tomillo
+    - la especie de la que quiero saber es el tomillo
+    - la especie acerca de la que quiero consultar es el tomillo
+    - la especie que me gustaría conocer es el tomillo
+ 
+- intent: select_liquidambar
+  examples: |
+    - me gustaría consultarte acerca del liquidámbar
+    - liquidámbar
+    - el liquidámbar
+    - elijo el liquidámbar
+    - me gustaría saber acerca del liquidámbar
+    - me gustaría preguntar sobre el liquidámbar
+    - quiero el liquidámbar
+    - quiero preguntar sobre el liquidámbar
+    - quiero saber acerca del liquidámbar
+    - quiero consultar acerca del liquidámbar
+    - la especie que elijo es el liquidámbar
+    - la planta que elijo es el liquidámbar
+    - la planta sobre la que quiero preguntar es el liquidámbar
+    - la planta de la que quiero saber es el liquidámbar
+    - la planta acerca de la que quiero consultar es el liquidámbar
+    - la planta que me gustaría conocer es el liquidámbar
+    - la especie sobre la que quiero preguntar es el liquidámbar
+    - la especie de la que quiero saber es el liquidámbar
+    - la especie acerca de la que quiero consultar es el liquidámbar
+    - la especie que me gustaría conocer es el liquidámbar
+
+- intent: select_sabina
+  examples: |
+    - me gustaría consultarte acerca de la sabina de cartagena
+    - sabina de cartagena
+    - la sabina de cartagena
+    - elijo la sabina de cartagena
+    - me gustaría saber acerca de la sabina de cartagena
+    - me gustaría preguntar sobre la sabina de cartagena
+    - quiero la sabina de cartagena
+    - quiero preguntar sobre la sabina de cartagena
+    - quiero saber acerca de la sabina de cartagena
+    - quiero consultar acerca de la sabina de cartagena
+    - la especie que elijo es la sabina de cartagena
+    - la planta que elijo es la sabina de cartagena
+    - la planta sobre la que quiero preguntar es la sabina de cartagena
+    - la planta de la que quiero saber es la sabina de cartagena
+    - la planta acerca de la que quiero consultar es la sabina de cartagena
+    - la planta que me gustaría conocer es la sabina de cartagena
+    - la especie sobre la que quiero preguntar es la sabina de cartagena
+    - la especie de la que quiero saber es la sabina de cartagena
+    - la especie acerca de la que quiero consultar es la sabina de cartagena
+    - la especie que me gustaría conocer es la sabina de cartagena
+ 
+- intent: select_laurel
+  examples: |
+    - me gustaría consultarte acerca del laurel
+    - laurel
+    - el laurel
+    - elijo el laurel
+    - me gustaría saber acerca del laurel
+    - me gustaría preguntar sobre el laurel
+    - quiero el laurel
+    - quiero preguntar sobre el laurel
+    - quiero saber acerca del laurel
+    - quiero consultar acerca del laurel
+    - la especie que elijo es el laurel
+    - la planta que elijo es el laurel
+    - la planta sobre la que quiero preguntar es el laurel
+    - la planta de la que quiero saber es el laurel
+    - la planta acerca de la que quiero consultar es el laurel
+    - la planta que me gustaría conocer es el laurel
+    - la especie sobre la que quiero preguntar es el laurel
+    - la especie de la que quiero saber es el laurel
+    - la especie acerca de la que quiero consultar es el laurel
+    - la especie que me gustaría conocer es el laurel
+
+- intent: select_hierbaluisa
+  examples: |
+    - me gustaría consultarte acerca de la hierbaluisa
+    - hierbaluisa
+    - la hierbaluisa
+    - elijo la hierbaluisa
+    - me gustaría saber acerca de la hierbaluisa
+    - me gustaría preguntar sobre la hierbaluisa
+    - quiero la hierbaluisa
+    - quiero preguntar sobre la hierbaluisa
+    - quiero saber acerca de la hierbaluisa
+    - quiero consultar acerca de la hierbaluisa
+    - la especie que elijo es la hierbaluisa
+    - la planta que elijo es la hierbaluisa
+    - la planta sobre la que quiero preguntar es la hierbaluisa
+    - la planta de la que quiero saber es la hierbaluisa
+    - la planta acerca de la que quiero consultar es la hierbaluisa
+    - la planta que me gustaría conocer es la hierbaluisa
+    - la especie sobre la que quiero preguntar es la hierbaluisa
+    - la especie de la que quiero saber es la hierbaluisa
+    - la especie acerca de la que quiero consultar es la hierbaluisa
+    - la especie que me gustaría conocer es la hierbaluisa
+
+
+- intent: select_espliego
+  examples: |
+    - me gustaría consultarte acerca del espliego
+    - espliego
+    - el espliego
+    - elijo el espliego
+    - me gustaría saber acerca del espliego
+    - me gustaría preguntar sobre el espliego
+    - quiero el espliego
+    - quiero preguntar sobre el espliego
+    - quiero saber acerca del espliego
+    - quiero consultar acerca del espliego
+    - la especie que elijo es el espliego
+    - la planta que elijo es el espliego
+    - la planta sobre la que quiero preguntar es el espliego
+    - la planta de la que quiero saber es el espliego
+    - la planta acerca de la que quiero consultar es el espliego
+    - la planta que me gustaría conocer es el espliego
+    - la especie sobre la que quiero preguntar es el espliego
+    - la especie de la que quiero saber es el espliego
+    - la especie acerca de la que quiero consultar es el espliego
+    - la especie que me gustaría conocer es el espliego
+
+- intent: select_aspect
+  examples: |
+    - me gustaría consultarte acerca de su aspecto
+    - me gustaría consultarte acerca de su descripción física
+    - su aspecto
+    - aspecto
+    - cómo es físicamente
+    - descripción física
+    - su descripción física
+    - cómo es
+    - cuéntame cómo es su aspecto
+    
+- intent: select_products
+  examples: |
+    - ¿qué se obtiene?
+    - ¿qué se obtiene de él?
+    - ¿qué se obtiene de ella?
+    - productos 
+    - ¿qué productos se obtienen?
+    - ¿para qué se usa?
+    - usos
+    - sus usos
+    - aplicaciones
+    - cuéntame sus aplicaciones
+    - cuéntame sus usos
+    - sus aplicaciones
+    - ¿cuáles son sus usos?
+    - ¿cuáles son sus aplicaciones?
+    - ¿para qué sirve?
+
+- intent: select_curiosities
+  examples: |
+    - curiosidades
+    - alguna otra información
+    - otras cosas
+    - aspectos interesantes
+    - datos curiosos
+    - datos peculiares
+    - peculiaridades
+    - cuéntame curiosidades
+    - cuéntame alguna curiosidad
+    

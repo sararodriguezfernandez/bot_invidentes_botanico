@@ -1,0 +1,428 @@
+version: "3.0"
+
+stories:
+
+- story: start conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_menu
+  - checkpoint: check_menu
+
+- story: explain
+  steps:
+  - checkpoint: check_menu
+  - intent: affirm
+  - action: utter_explain
+  - action: utter_end_explain_select
+
+- story: no explain
+  steps:
+  - checkpoint: check_menu
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting alcanforero and its aspect
+  steps:
+  - intent: select_alcanforero
+  - action: utter_select_alcanforero
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_alcanforero
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting alcanforero and its products
+  steps:
+  - intent: select_alcanforero
+  - action: utter_select_alcanforero
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_alcanforero
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting alcanforero and its curiosities
+  steps:
+  - intent: select_alcanforero
+  - action: utter_select_alcanforero
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_alcanforero
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting naranjo and its aspect
+  steps:
+  - intent: select_naranjo
+  - action: utter_select_naranjo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_naranjo
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting naranjo and its products
+  steps:
+  - intent: select_naranjo
+  - action: utter_select_naranjo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_naranjo
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting naranjo and its curiosities
+  steps:
+  - intent: select_naranjo
+  - action: utter_select_naranjo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_naranjo
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting jazmin and its aspect
+  steps:
+  - intent: select_jazmin
+  - action: utter_select_jazmin
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_jazmin
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting jazmin and its products
+  steps:
+  - intent: select_jazmin
+  - action: utter_select_jazmin
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_jazmin
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting jazmin and its curiosities
+  steps:
+  - intent: select_jazmin
+  - action: utter_select_jazmin
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_jazmin
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting salvia and its aspect
+  steps:
+  - intent: select_salvia
+  - action: utter_select_salvia
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_salvia
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting salvia and its products
+  steps:
+  - intent: select_salvia
+  - action: utter_select_salvia
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_salvia
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting salvia and its curiosities
+  steps:
+  - intent: select_salvia
+  - action: utter_select_salvia
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_salvia
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting tomillo and its aspect
+  steps:
+  - intent: select_tomillo
+  - action: utter_select_tomillo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_tomillo
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting tomillo and its products
+  steps:
+  - intent: select_tomillo
+  - action: utter_select_tomillo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_tomillo
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting tomillo and its curiosities
+  steps:
+  - intent: select_tomillo
+  - action: utter_select_tomillo
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_tomillo
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting liquidambar and its aspect
+  steps:
+  - intent: select_liquidambar
+  - action: utter_select_liquidambar
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_liquidambar
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting liquidambar and its products
+  steps:
+  - intent: select_liquidambar
+  - action: utter_select_liquidambar
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_liquidambar
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting liquidambar and its curiosities
+  steps:
+  - intent: select_liquidambar
+  - action: utter_select_liquidambar
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_liquidambar
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting sabina and its aspect
+  steps:
+  - intent: select_sabina
+  - action: utter_select_sabina
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_sabina
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting sabina and its products
+  steps:
+  - intent: select_sabina
+  - action: utter_select_sabina
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_sabina
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting sabina and its curiosities
+  steps:
+  - intent: select_sabina
+  - action: utter_select_sabina
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_sabina
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting laurel and its aspect
+  steps:
+  - intent: select_laurel
+  - action: utter_select_laurel
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_laurel
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting laurel and its products
+  steps:
+  - intent: select_laurel
+  - action: utter_select_laurel
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_laurel
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting laurel and its curiosities
+  steps:
+  - intent: select_laurel
+  - action: utter_select_laurel
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_laurel
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting hierbaluisa and its aspect
+  steps:
+  - intent: select_hierbaluisa
+  - action: utter_select_hierbaluisa
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_hierbaluisa
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting hierbaluisa and its products
+  steps:
+  - intent: select_hierbaluisa
+  - action: utter_select_hierbaluisa
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_hierbaluisa
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting hierbaluisa and its curiosities
+  steps:
+  - intent: select_hierbaluisa
+  - action: utter_select_hierbaluisa
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_hierbaluisa
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting espliego and its aspect
+  steps:
+  - intent: select_espliego
+  - action: utter_select_espliego
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_aspect
+  - action: utter_info_aspect_espliego
+  - action: utter_end
+  - action: utter_goodbye
+  
+- story: selecting espliego and its products
+  steps:
+  - intent: select_espliego
+  - action: utter_select_espliego
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_products
+  - action: utter_info_products_espliego
+  - action: utter_end
+  - action: utter_goodbye
+   
+- story: selecting espliego and its curiosities
+  steps:
+  - intent: select_espliego
+  - action: utter_select_espliego
+  - intent: affirm
+  - action: utter_select_category
+  - intent: select_curiosities
+  - action: utter_info_curiosities_espliego
+  - action: utter_end
+  - action: utter_goodbye
+
+- story: selecting alcanforero because of an error
+  steps:
+  - intent: select_alcanforero
+  - action: utter_select_alcanforero
+  - intent: deny
+  - action: utter_no_explain_select
+  
+- story: selecting naranjo because of an error
+  steps:
+  - intent: select_naranjo
+  - action: utter_select_naranjo
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting jazmin because of an error
+  steps:
+  - intent: select_jazmin
+  - action: utter_select_jazmin
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting salvia because of an error
+  steps:
+  - intent: select_salvia
+  - action: utter_select_salvia
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting tomillo because of an error
+  steps:
+  - intent: select_tomillo
+  - action: utter_select_tomillo
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting liquidambar because of an error
+  steps:
+  - intent: select_liquidambar
+  - action: utter_select_liquidambar
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting sabina because of an error
+  steps:
+  - intent: select_sabina
+  - action: utter_select_sabina
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting laurel because of an error
+  steps:
+  - intent: select_laurel
+  - action: utter_select_laurel
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting hierbaluisa because of an error
+  steps:
+  - intent: select_hierbaluisa
+  - action: utter_select_hierbaluisa
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: selecting espliego because of an error
+  steps:
+  - intent: select_espliego
+  - action: utter_select_espliego
+  - intent: deny
+  - action: utter_no_explain_select
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

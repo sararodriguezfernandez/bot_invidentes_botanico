@@ -1,0 +1,271 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 300
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - select_alcanforero
+  - select_naranjo
+  - select_jazmin
+  - select_salvia
+  - select_tomillo
+  - select_liquidambar
+  - select_sabina
+  - select_laurel
+  - select_hierbaluisa
+  - select_espliego
+  - select_aspect
+  - select_products
+  - select_curiosities
+responses:
+  utter_greet:
+  - text: "Hola, soy el chatbot del Real Jardín Botánico de Madrid diseñado para acompañarte en el recorrido de las plantas aromáticas."
+  - text: "Saludos, soy un chatbot del Real Jardín Botánico de Madrid, que te acompañará en el recorrido de las plantas aromáticas."
+  - text: "Hola, soy el chatbot del Real Jardín Botánico de Madrid y estoy encantado de poder acompañarte en el recorrido de las plantas aromáticas."
+
+  utter_goodbye:
+  - text: "Adiós."
+  - text: "Hasta pronto."
+  - text: "Hasta la próxima."
+  - text: "Hasta luego."
+  - text: "Hasta la vista."
+
+  utter_end:
+  - text: "Espero haber podido ayudarte. No dudes en consultarme si deseas saber más, recuerda que solo has de saludarme y estaré disponible.Gracias por dejarme participar en tu experiencia"
+
+  utter_menu:
+  - text: "¿Sabes cómo funciono o prefieres que te lo explique?. Puedes responderme Sí, en caso de que quieras que te lo explique, o No, en caso contrario."
+    
+  utter_explain:
+  - text: "Soy un bot que te acompañará y ayudará en tu visita de forma personalen el recorrido de las plantas aromáticas, que incluye a el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego. Primero has de decirme que quieres consultarme acerca de una especie incluyendo su nombre. Por ejemplo, si quisieras consultarme acerca del tomillo podrías decirme: “Me gustaría consultarte acerca del tomillo”. Después, cuando te pregunte podrás decirme acerca de lo que quieres preguntar. Para todas las plantas podrás preguntarme acerca de su descripción física o aspecto, los productos que se obtienen de ella o alguna curiosidad de esa planta. En este caso, podrías decirme, por ejemplo: “Quiero saber su aspecto”. "
+
+  utter_end_explain_select:
+  - text: "Así que, ¿qué especie eliges?"
+  - text: "Entonces, ¿acerca de qué planta quieres consultarme?"
+  - text: "Y bien, ¿qué especie te gustaría conocer?"
+
+  utter_no_explain_select:
+  - text: "De acuerdo. Entonces, ¿qué planta eliges?"
+  - text: "Vale. Entonces, ¿qué planta te gustaría conocer?"
+  - text: "De acuerdo. ¿Sobre qué planta te gustaría preguntar?"
+
+  utter_select_category:
+  - text: "¿Qué te gustaría saber acerca de esta planta?. Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
+  - text: "¿Qué te gustaría que te contase acerca de esta planta?. Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
+  - text: "Y bien, ¿qué quieres saber?.Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
+
+  utter_select_alcanforero:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el alcanforero. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el alcanforero?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_naranjo:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el naranjo amargo. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el naranjo amargo?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_jazmin:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el jazmín. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el jazmín?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_salvia:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la salvia. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la salvia?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_tomillo:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el tomillo. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el tomillo?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_liquidambar:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el liquidámbar. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el liquidámbar?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_sabina:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la sabina de Cartagena. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la sabina de Cartagena?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_laurel:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el laurel. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el laurel?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_hierbaluisa:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la hierbaluisa.
+   ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es 
+  la hierbaluisa?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_select_espliego:
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el espliego. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el espliego?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+
+  utter_info_aspect_alcanforero:
+  - text: "El alcanforero se trata de un árbol de hoja perenne, de hasta más de treinta metros de altura. 
+  Sus hojas son ovadas o elípticas, de color verde brillante y terminan en punta. Sus flores están dispuestas en grupos y
+  su fruto es globoso, pequeño y de color negruzco."
+
+  utter_info_products_alcanforero:
+  - text: "Del alcanfor se obtiene un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor, 
+  al destilar la madera o las raíces. Estos cristales son un ingrediente de la naftalina y cada árbol 
+  produce unas tres toneladas."
+
+  utter_info_curiosities_alcanforero:
+  - text: "El alcanfor ha sido usado desde la antigüedad, ya que existen menciones de él en sánscrito, 
+  en el Antiguo Testamento y en obras de medicina griegas. Además, los egipcios lo empleaban para embalsamar cadáveres.
+  Más tarde, fue uno de los ingredientes preferidos por los árabes para la elaboración de perfumes.
+  En la actualidad, un producto sintético ha sustituido al alcanfor natural."
+
+  utter_info_aspect_naranjo:
+  - text: "El naranjo amargo es un árbol de hoja perfumada, perenne y con forma de lanza.
+  Sus flores son blancas y desprenden un fuerte y característico aroma y su fruto es una naranja algo oscura,
+  que no es comestible debido a su amargor."
+
+  utter_info_products_naranjo:
+  - text: "De las flores del naranjo, llamadas flores de azahar, se obtiene una sustancia denominada neroli,
+  usada en aguas de colonia, perfumes y jabones. Además, el agua de azahar es un apreciado ingrediente utilizado 
+  en repostería como saborizante, por ejemplo en el conocido roscón de reyes y en la elaboración de licores."
+
+  utter_info_curiosities_naranjo:
+  - text: "El naranjo amargo fue difundido por los árabes y llegó a la Península Ibérica hacia el siglo diez, 
+  mucho antes que la naranja dulce. Se usó entonces para decorar y perfumar los jardines de Al Ándalus y para 
+  extraer el agua de azahar."
+
+  utter_info_aspect_jazmin:
+  - text: "El jazmín es un arbusto trepador de color verde y hasta 10 metros. Sus hojas están compuestas por entre
+  5 y 9 hojuelas, y sus flores blancasa despiden un agradable aroma."
+
+  utter_info_products_jazmin:
+  - text: "De las flores del jazmín, se obtiene la esencia de jazmín, que es una de las más apreciadas en perfumería. 
+  Además, debido a que no se puede imitar sintéticamente y a lo dificultoso de su extracción resulta una de las esencias 
+  más costosas."
+
+  utter_info_curiosities_jazmin:
+  - text: "La esencia de jazmín se obtiene de la cara interna de los pétalos. Para ello se utiliza el método del 
+  enflorado, consistente en poner en contacto las flores con un aceite vegetal, normalmente de oliva, 
+  de manera que las esencias pasan a éste, de donde posteriormente se extraen."
+
+  utter_info_aspect_salvia:
+  - text: "La salvia es una planta leñosa de hasta 70 cm de altura. Sus hojas son gruesas y rugosas, 
+  cubiertas de pelos blanquecinos por el envés y sus flores de forma tubular y color blanco-violáceo 
+  están agrupadas al final de las ramas."
+
+  utter_info_products_salvia:
+  - text: "Las hojas de la salvia se utilizan como conservante de alimentos en industrias cárnicas, 
+  y como condimento de multitud de platos. Sus flores son empleadas en la industria conservera para preparar mermeladas
+  y el aceite esencial se usa en la elaboración de muchos perfumes de calidad, jabones y pastas dentífricas."
+
+  utter_info_curiosities_salvia:
+  - text: "La salvia ha sido considerada una de las más importantes hierbas medicinales durante miles de años. 
+  El nombre genérico deriva del latín salvus, sano, indemne, en alusión a sus propiedades medicinales, 
+  y el específico officinale indica su uso en la botica (officina). Sin embargo, tiene también otras aplicaciones 
+  en alimentación, perfumería y cosmética."
+
+  utter_info_aspect_tomillo:
+  - text: "El tomillo es un pequeño arbusto de flores rosadas y hojas lineares con el margen enrollado hacia el envés."
+
+  utter_info_products_tomillo:
+  - text: "Es una planta muy aromática utilizada tanto en perfumería y jabonería, como en la elaboración de platos 
+  de carnes y pescados. Se usa también para preparar diversos licores. Al mismo tiempo, el aceite esencial 
+  extraído de esta planta es empleado para aromatizar pastas de dientes y cosméticos."
+
+  utter_info_curiosities_tomillo:
+  - text: "En el antiguo Egipto se cultivaban especies de tomillo destinadas a perfumar los ungüentos para embalsamar 
+  los cadáveres, sin embargo pasó inadvertida en la civilización griega. Más tarde, los romanos la introdujeron en el 
+  mundo occidental por sus múltiples virtudes medicinales."
+
+  utter_info_aspect_liquidambar:
+  - text: "El liquidámbar es un árbol de porte piramidal, con una altura máxima de 41 metros. Sus hojas son palmadas
+  y lobuladas, por lo que recuerdan mucho a las que tienen los arces, con la diferencia de que las de nuestro árbol 
+  tienen cinco lóbulos puntiagudos que están dispuestos alternativamente y no en pares opuestos. Estas se vuelven 
+  naranjas, rojas o púrpuras en otoño. Además, es un ejemplar monoico, donde las flores masculinas se presentan 
+  en forma de racimos florales cónicos y las femeninas se reúnen en forma pendular. 
+  Su fruto es seco y globoso, con un diámetro de hasta cuatro centímetros."
+
+  utter_info_products_liquidambar:
+  - text: "De este árbol, se obtiene una madera de color pardo, brillante y coloreado de rojo. En América, 
+  de donde procede, tiene un importante uso comercial en la fabricación de muebles y contrachapados, entre otros. 
+  Además, su nombre, Liquidámbar, hace referencia a su resina, antiséptica y muy olorosa, que se obtiene por 
+  incisión y se utiliza tanto en perfumería, como para aromatizar jabones, cosméticos, esencias, pomadas y cremas."
+
+  utter_info_curiosities_liquidambar:
+  - text: "El nombre del género es una palabra compuesta, formada por líquido y ámbar , que procede del árabe 
+  ambar, debido a su secreción fluida y aromática. De su corteza se obtiene una resina muy olorosa, el liquidámbar, 
+  que era ya utilizada en la civilización azteca, como incienso en las casas y templos y como aromatizante del tabaco."
+
+  utter_info_aspect_sabina:
+  - text: "La sabina de Cartagena es un árbol de hoja persistente que puede llegar a los quince metros de altura. 
+  Su tronco es recto con la corteza estriada de color pardo o gris ceniciento y de él salen en todas las direcciones
+  ramillas de un aspecto delicado. Sus hojas tienen forma de escama alargada, semejantes a las de los cipreses. 
+  Además, se trata de una especie que florece en otoño o invierno y tiene las piñas masculinas y femeninas 
+  en el mismo pie de planta."
+
+  utter_info_products_sabina:
+  - text: "Al sangrar el tronco, se obtiene una resina amarillenta de olor balsámico, llamada sandáraca, 
+  que en la actualidad se usa para la elaboración de barnices y de cementos dentarios. Además, su madera 
+  es de excelente calidad y se usa para elaborar pequeñas tallas, objetos artísticos e incluso muebles en 
+  el norte de África, donde es abundante."
+
+  utter_info_curiosities_sabina:
+  - text: "Se trata de una reliquia botánica y biogeográfica en toda Europa, encontrándose tan sólo 
+  en la Sierra de Cartagena y la Isla de Malta. Aunque sigue siendo frecuente en Marruecos, Túnez 
+  y Argelia, donde se la conoce como Araar."
+
+  utter_info_aspect_laurel:
+  - text: "El laurel es un pequeño árbol de tronco recto, corteza lisa y grisácea de menos de 
+  diez metros de altura y hoja perenne, oscura y lanceolada. Hay plantas macho y plantas hembra; 
+  estas últimas dan un fruto negro, carnoso y redondeado. Además, toda la planta contiene aceites 
+  esenciales que la hacen aromática, sobre todo sus hojas. Sus flores son amarillentas y están dispuestas en 
+  distintos pies de planta. "
+
+  utter_info_products_laurel:
+  - text: "El laurel ha sido usado habitualmente en la cocina mediterránea para aderezar multitud de guisos. 
+  Para ello se recogen las hojas en otoño y se dejan secar, ya que las hojas secas tienen más sabor que las 
+  frescas. Además, por destilación a vapor se obtiene un aceite esencial empleado en la industria perfumera."
+
+  utter_info_curiosities_laurel:
+  - text: "En la Antigüedad clásica se empleaba el laurel para hacer coronas, como símbolo de triunfo en las 
+  victorias de guerra o competiciones deportivas."
+
+  utter_info_aspect_hierbaluisa:
+  - text: "La hierbaluisa es un arbusto de hoja caduca aromático de hasta dos metros y medio.
+  Sus hojas lanceoladas pueden medir hasta diez centímetros y están reunidas de tres en tres. 
+  Sus flores son pequeñas, de color violáceo y están agrupadas en racimos."
+
+  utter_info_products_hierbaluisa:
+  - text: "La hierbaluisa fue traída a Europa y descrita por los españoles a principios del siglo 
+  dieciocho. Desde entonces sus hojas se han utilizado en Europa para la elaboración de perfumes, 
+  jabones y cosméticos, por su aroma a limón. Además, se usa en la cocina para aromatizar 
+  algunos platos, infusiones y en la combinación de cócteles."
+
+  utter_info_curiosities_hierbaluisa:
+  - text: "Esta planta cuenta con una historia singular en el Jardín, ya que el nombre del género 
+  Aloysia fue dedicado por dos de sus profesores: Casimiro Gómez Ortega y Antonio Palau y Verdera, 
+  a la infanta María Luisa de Borbón. Además, el epíteto específico citrodora, 
+  hace referencia al olor a limón característico de la savia que resulta al machacar sus tallos o sus hojas."
+
+  utter_info_aspect_espliego:
+  - text: "El espliego es una mata de hasta setenta centímetros de altura, con la base leñosa y los 
+  tallos casi herbáceos, con hojas alargadas y estrechas. Sus flores, de forma tubular y color púrpura, 
+  se agrupan en espigas al final de los tallos."
+
+  utter_info_products_espliego:
+  - text: "Es una hierba muy popular como insecticida y por su duradero perfume. El aceite esencial 
+  es muy apreciado en perfumería. En alimentación, se emplea desde tiempos de los romanos para 
+  condimentar ensaladas y se ha consumido, incluso como hierba de puchero. En la actualidad, las hojas
+  se utilizan en la cocina del sur de Europa y las flores se pueden emplear para hacer vinagre de espliego"
+
+  utter_info_curiosities_espliego:
+  - text: "El nombre del género deriva del verbo latino lavo (bañar, lavar), en alusión al uso que se hacía 
+  de sus flores en la antigua Roma para perfumar el agua de los baños."
+
+  utter_repeat:
+  - text: "Lo siento, no te he entendido bien. ¿Podrías repetir?"
+  - text: "Disculpa, no te he entendido. ¿Podrías repetirlo de otra forma?"
+  - text: "Vaya, no te he entendido bien. ¿Te importaría repetírmelo de otra manera?"
+
+
+
+
+
+
+
