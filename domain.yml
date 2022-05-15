@@ -33,8 +33,14 @@ responses:
   - text: "Hasta luego."
   - text: "Hasta la vista."
 
-  utter_end:
-  - text: "Espero haber podido ayudarte. No dudes en consultarme si deseas saber más, recuerda que solo has de saludarme y estaré disponible.Gracias por dejarme participar en tu experiencia"
+  utter_end_ask_game:
+  - text: "Espero haber podido ayudarte. ¿Quieres jugar para comprobar lo que has aprendido acerca de esta planta?"
+
+  utter_ask_another_plant:
+  - text: "Y bien, ¿deseas saber algo más acerca de alguna planta del recorrido?"
+
+  utter_end_conversation:
+  - text: "De acuerdo. Muchas gracias por dejarme participar en tuexperiencia. Si necesitas cualquier cosa, solo has de saludarme y estaré disponible para ti."
 
   utter_menu:
   - text: "¿Sabes cómo funciono o prefieres que te lo explique?. Puedes responderme Sí, en caso de que quieras que te lo explique, o No, en caso contrario."
@@ -42,12 +48,19 @@ responses:
   utter_explain:
   - text: "Soy un bot que te acompañará y ayudará en tu visita de forma personalen el recorrido de las plantas aromáticas, que incluye a el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego. Primero has de decirme que quieres consultarme acerca de una especie incluyendo su nombre. Por ejemplo, si quisieras consultarme acerca del tomillo podrías decirme: “Me gustaría consultarte acerca del tomillo”. Después, cuando te pregunte podrás decirme acerca de lo que quieres preguntar. Para todas las plantas podrás preguntarme acerca de su descripción física o aspecto, los productos que se obtienen de ella o alguna curiosidad de esa planta. En este caso, podrías decirme, por ejemplo: “Quiero saber su aspecto”. "
 
-  utter_end_explain_select:
+  utter_explain_game:
+  - text: "Estupendo. A continuación, vamos a comprobar si has estado atento a lo que te he explicado.
+  Te daré tres opciones A, B o C, y solo has de decirme A, B o C seleccionando la que crees que es la correcta. "
+
+  utter_end_explain_select_plant:
   - text: "Así que, ¿qué especie eliges?"
   - text: "Entonces, ¿acerca de qué planta quieres consultarme?"
   - text: "Y bien, ¿qué especie te gustaría conocer?"
 
-  utter_no_explain_select:
+  utter_congratulations:
+  - text: "Enhorabuena. Has acertado, así que has estado atento a mi explicación. ¡Te felicito!"
+
+  utter_select_plant:
   - text: "De acuerdo. Entonces, ¿qué planta eliges?"
   - text: "Vale. Entonces, ¿qué planta te gustaría conocer?"
   - text: "De acuerdo. ¿Sobre qué planta te gustaría preguntar?"
@@ -104,10 +117,22 @@ responses:
   Sus hojas son ovadas o elípticas, de color verde brillante y terminan en punta. Sus flores están dispuestas en grupos y
   su fruto es globoso, pequeño y de color negruzco."
 
+  utter_game_aspect_alcanforero:
+  - text: "El alcanforero puede medir.... 
+  A. Hasta diez metros de altura.
+  B. Hasta treinta metros de altura.
+  C. Hasta cincuenta metros de altura."
+
   utter_info_products_alcanforero:
-  - text: "Del alcanfor se obtiene un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor, 
+  - text: "Del alcanforero se obtiene un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor, 
   al destilar la madera o las raíces. Estos cristales son un ingrediente de la naftalina y cada árbol 
   produce unas tres toneladas."
+  
+  utter_game_products_alcanforero:
+  - text: "Al destilar la madera o las raíces del alcanfor se obtiene.... 
+  A. Un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor.
+  B. Un aceite y una sustancia roja y cristalina muy aromática, llamada azahar.
+  C. Una sustancia azul."
 
   utter_info_curiosities_alcanforero:
   - text: "El alcanfor ha sido usado desde la antigüedad, ya que existen menciones de él en sánscrito, 
@@ -115,44 +140,98 @@ responses:
   Más tarde, fue uno de los ingredientes preferidos por los árabes para la elaboración de perfumes.
   En la actualidad, un producto sintético ha sustituido al alcanfor natural."
 
+  utter_game_curiosities_alcanforero:
+  - text: "¿Para qué se usaban el alcanforero los egipcios?
+  A. Para cocinar.
+  B. Para embalsamar cadáveres.
+  C. No se usaba en la antigüedad."
+
   utter_info_aspect_naranjo:
   - text: "El naranjo amargo es un árbol de hoja perfumada, perenne y con forma de lanza.
   Sus flores son blancas y desprenden un fuerte y característico aroma y su fruto es una naranja algo oscura,
   que no es comestible debido a su amargor."
+
+  utter_game_aspect_naranjo:
+  - text: "El naranjo amargo tiene...
+  A. Flores blancas con un fuerte aroma.
+  B. Naranjas comestibles por su dulzor.
+  C. Flores naranjas."
 
   utter_info_products_naranjo:
   - text: "De las flores del naranjo, llamadas flores de azahar, se obtiene una sustancia denominada neroli,
   usada en aguas de colonia, perfumes y jabones. Además, el agua de azahar es un apreciado ingrediente utilizado 
   en repostería como saborizante, por ejemplo en el conocido roscón de reyes y en la elaboración de licores."
 
+  utter_game_products_naranjo:
+  - text: "De sus flores se obtiene una sustancia usada en...
+  A. Aguas de colonia, perfumes y jabones.
+  B. No se puede usar.
+  C. La Antigüedad."
+
   utter_info_curiosities_naranjo:
   - text: "El naranjo amargo fue difundido por los árabes y llegó a la Península Ibérica hacia el siglo diez, 
   mucho antes que la naranja dulce. Se usó entonces para decorar y perfumar los jardines de Al Ándalus y para 
   extraer el agua de azahar."
 
+  utter_game_curiosities_naranjo:
+  - text: "El naranjo amargo...
+  A. Legó a la Península en el sigo diez.
+  B. Legó antes a la Península que la naranja dulce.
+  C. Ambas son correctas."
+
   utter_info_aspect_jazmin:
   - text: "El jazmín es un arbusto trepador de color verde y hasta 10 metros. Sus hojas están compuestas por entre
   5 y 9 hojuelas, y sus flores blancasa despiden un agradable aroma."
+
+  utter_game_aspect_jazmin:
+  - text: "El jazmín...
+  A. Es un arbusto trepador de flores blancas.
+  B. Es un árbol de hasta treinta metros.
+  C. Ninguna de las anteriores."
 
   utter_info_products_jazmin:
   - text: "De las flores del jazmín, se obtiene la esencia de jazmín, que es una de las más apreciadas en perfumería. 
   Además, debido a que no se puede imitar sintéticamente y a lo dificultoso de su extracción resulta una de las esencias 
   más costosas."
 
+  utter_game_products_jazmin:
+  - text: "La esencia de jazmín...
+  A. Se usa en perfumería.
+  B. Se usa en cocina.
+  C. Se usaba para embalsamar cadáveres."
+
   utter_info_curiosities_jazmin:
   - text: "La esencia de jazmín se obtiene de la cara interna de los pétalos. Para ello se utiliza el método del 
   enflorado, consistente en poner en contacto las flores con un aceite vegetal, normalmente de oliva, 
   de manera que las esencias pasan a éste, de donde posteriormente se extraen."
 
+  utter_game_curiosities_jazmin:
+  - text: "Del jazmín se obtiene...
+  A. La esencia de jazmín mediante el método del enflorado.
+  B. La esencia de azahar.
+  C. Ninguna de las anteriores."
+
   utter_info_aspect_salvia:
-  - text: "La salvia es una planta leñosa de hasta 70 cm de altura. Sus hojas son gruesas y rugosas, 
-  cubiertas de pelos blanquecinos por el envés y sus flores de forma tubular y color blanco-violáceo 
+  - text: "La salvia es una planta leñosa de hasta 70 centímetros de altura. Sus hojas son gruesas y rugosas, 
+  cubiertas de pelos blanquecinos por el envés, y sus flores de forma tubular y color blanco-violáceo 
   están agrupadas al final de las ramas."
+
+  utter_game_aspect_salvia:
+  - text: "La salvia es...
+  A. Una planta leñosa de hojas gruesas y rugosas.
+  B. Una planta leñosa de flores blanco-violáceas.
+  C. Ambas son correctas."
 
   utter_info_products_salvia:
   - text: "Las hojas de la salvia se utilizan como conservante de alimentos en industrias cárnicas, 
   y como condimento de multitud de platos. Sus flores son empleadas en la industria conservera para preparar mermeladas
   y el aceite esencial se usa en la elaboración de muchos perfumes de calidad, jabones y pastas dentífricas."
+
+  utter_game_products_salvia:
+  - text: "Las hojas de la salvia ...
+  A. Se usan como conservante y condimento.
+  B. No se pueden usar.
+  C. Se usan para obtener la esencia de la salvia."
 
   utter_info_curiosities_salvia:
   - text: "La salvia ha sido considerada una de las más importantes hierbas medicinales durante miles de años. 
@@ -160,18 +239,42 @@ responses:
   y el específico officinale indica su uso en la botica (officina). Sin embargo, tiene también otras aplicaciones 
   en alimentación, perfumería y cosmética."
 
+  utter_game_curiosities_salvia:
+  - text: "Su nombre genérico hace alusión ...
+  A. A sus propiedades medicinales.
+  B. A sus propiedades de sabor.
+  C. Ninguna de las anteriores."
+
   utter_info_aspect_tomillo:
   - text: "El tomillo es un pequeño arbusto de flores rosadas y hojas lineares con el margen enrollado hacia el envés."
+
+  utter_game_aspect_tomillo:
+  - text: "El tomillo es...
+  A. Un pequeño arbusto de flores rosadas.
+  B. Un pequeño arbusto de hojas lineares.
+  C. Ambas son correctas."
 
   utter_info_products_tomillo:
   - text: "Es una planta muy aromática utilizada tanto en perfumería y jabonería, como en la elaboración de platos 
   de carnes y pescados. Se usa también para preparar diversos licores. Al mismo tiempo, el aceite esencial 
   extraído de esta planta es empleado para aromatizar pastas de dientes y cosméticos."
 
+  utter_game_products_tomillo:
+  - text: "Es una planta usada ...
+  A. En perfumería y jabonería.
+  B. En la elaboración de platos de carnes y pescados.
+  C. Ambas son correctas."
+
   utter_info_curiosities_tomillo:
   - text: "En el antiguo Egipto se cultivaban especies de tomillo destinadas a perfumar los ungüentos para embalsamar 
   los cadáveres, sin embargo pasó inadvertida en la civilización griega. Más tarde, los romanos la introdujeron en el 
   mundo occidental por sus múltiples virtudes medicinales."
+
+  utter_game_curiosities_tomillo:
+  - text: "El tomillo ...
+  A. Fue usado por los egipcios para embalsamar cadáveres.
+  B. Fue usado por los griegos para ambalsamar cadáveres.
+  C. Era usado en Al-Ándalus para decorar jardines."
 
   utter_info_aspect_liquidambar:
   - text: "El liquidámbar es un árbol de porte piramidal, con una altura máxima de 41 metros. Sus hojas son palmadas
@@ -181,16 +284,35 @@ responses:
   en forma de racimos florales cónicos y las femeninas se reúnen en forma pendular. 
   Su fruto es seco y globoso, con un diámetro de hasta cuatro centímetros."
 
+  
+  utter_game_aspect_liquidambar:
+  - text: "El liquidámbar ...
+  A. Es un árbol de hasta 41 metros de altura.
+  B. Es un árbol de hojas palmadas y lobuladas, que recuerdan a las de los arces.
+  C. Ambas son correctas."
+
   utter_info_products_liquidambar:
   - text: "De este árbol, se obtiene una madera de color pardo, brillante y coloreado de rojo. En América, 
   de donde procede, tiene un importante uso comercial en la fabricación de muebles y contrachapados, entre otros. 
   Además, su nombre, Liquidámbar, hace referencia a su resina, antiséptica y muy olorosa, que se obtiene por 
   incisión y se utiliza tanto en perfumería, como para aromatizar jabones, cosméticos, esencias, pomadas y cremas."
 
+  utter_game_products_liquidambar:
+  - text: "Del liquidámbar ...
+  A. Se obtiene una madera de color pardo, brillante y rojiza usada en la fabricación de muebles.
+  B. Se obtiene una resina usada en perfumería.
+  C. Ambas son correctas."
+
   utter_info_curiosities_liquidambar:
   - text: "El nombre del género es una palabra compuesta, formada por líquido y ámbar , que procede del árabe 
   ambar, debido a su secreción fluida y aromática. De su corteza se obtiene una resina muy olorosa, el liquidámbar, 
   que era ya utilizada en la civilización azteca, como incienso en las casas y templos y como aromatizante del tabaco."
+
+  utter_game_curiosities_liquidambar:
+  - text: "Su resina ...
+  A. Se obtiene de las hojas.
+  B. Se obtiene de la corteza y ya era usada por los aztecas.
+  C. Se obtiene de la corteza y ya era usada por los egipcios."
 
   utter_info_aspect_sabina:
   - text: "La sabina de Cartagena es un árbol de hoja persistente que puede llegar a los quince metros de altura. 
@@ -199,16 +321,34 @@ responses:
   Además, se trata de una especie que florece en otoño o invierno y tiene las piñas masculinas y femeninas 
   en el mismo pie de planta."
 
+  utter_game_aspect_sabina:
+  - text: "La sabina es un árbol ...
+  A. De tronco recto con la corteza estriada y ramillas en todas las direcciones.
+  B. De hojas alargadas, similares a las de los cipreses.
+  C. Ambas son correctas."
+
   utter_info_products_sabina:
   - text: "Al sangrar el tronco, se obtiene una resina amarillenta de olor balsámico, llamada sandáraca, 
   que en la actualidad se usa para la elaboración de barnices y de cementos dentarios. Además, su madera 
   es de excelente calidad y se usa para elaborar pequeñas tallas, objetos artísticos e incluso muebles en 
   el norte de África, donde es abundante."
 
+  utter_game_products_sabina:
+  - text: "De la sabina se obtiene una resina que es usada ...
+  A. En la elaboración de barnices.
+  B. Como aderezo en la cocina.
+  C. Ninguna es correcta."
+
   utter_info_curiosities_sabina:
   - text: "Se trata de una reliquia botánica y biogeográfica en toda Europa, encontrándose tan sólo 
   en la Sierra de Cartagena y la Isla de Malta. Aunque sigue siendo frecuente en Marruecos, Túnez 
   y Argelia, donde se la conoce como Araar."
+
+  utter_game_curiosities_sabina:
+  - text: "La sabina es ...
+  A. Una especie frecuente en Marruecos, Túnez y Argelia .
+  B. Una especie muy abundante en toda Europa.
+  C. Una especie extinta."
 
   utter_info_aspect_laurel:
   - text: "El laurel es un pequeño árbol de tronco recto, corteza lisa y grisácea de menos de 
@@ -217,25 +357,55 @@ responses:
   esenciales que la hacen aromática, sobre todo sus hojas. Sus flores son amarillentas y están dispuestas en 
   distintos pies de planta. "
 
+  utter_game_aspect_laurel:
+  - text: "El laurel ...
+  A. Es un pequeño árbol de tronco recto, corteza lisa y grisácea, de menos de diez metros de altura.
+  B. Es una planta, que contiene aceites esenciales, especialmente en sus hojas.
+  C. Ambas son correctas."
+
   utter_info_products_laurel:
   - text: "El laurel ha sido usado habitualmente en la cocina mediterránea para aderezar multitud de guisos. 
   Para ello se recogen las hojas en otoño y se dejan secar, ya que las hojas secas tienen más sabor que las 
   frescas. Además, por destilación a vapor se obtiene un aceite esencial empleado en la industria perfumera."
 
+  utter_game_products_laurel:
+  - text: "Las hojas del laurel ...
+  A. Se usan como aderezo de guisos.
+  B. Son tóxicas.
+  C. Ninguna es correcta."
+
   utter_info_curiosities_laurel:
   - text: "En la Antigüedad clásica se empleaba el laurel para hacer coronas, como símbolo de triunfo en las 
   victorias de guerra o competiciones deportivas."
+
+  utter_game_curiosities_laurel:
+  - text: "El laurel en la Antigüedad clásica ...
+  A. Se empleaba para hacer coronas, como símbolo de triunfo.
+  B. Se empleaba para hacer perfumes.
+  C. Se empleaba para decorar."
 
   utter_info_aspect_hierbaluisa:
   - text: "La hierbaluisa es un arbusto de hoja caduca aromático de hasta dos metros y medio.
   Sus hojas lanceoladas pueden medir hasta diez centímetros y están reunidas de tres en tres. 
   Sus flores son pequeñas, de color violáceo y están agrupadas en racimos."
 
+  utter_game_aspect_hierbaluisa:
+  - text: "La hierbaluisa ...
+  A. Es un arbusto de hoja caduca de hasta dos metros y medio.
+  B. Tiene flores pequeñas de color violáceo.
+  C. Ambas son correctas."
+
   utter_info_products_hierbaluisa:
   - text: "La hierbaluisa fue traída a Europa y descrita por los españoles a principios del siglo 
   dieciocho. Desde entonces sus hojas se han utilizado en Europa para la elaboración de perfumes, 
   jabones y cosméticos, por su aroma a limón. Además, se usa en la cocina para aromatizar 
   algunos platos, infusiones y en la combinación de cócteles."
+
+  utter_game_products_hierbaluisa:
+  - text: "La hierbaluisa ...
+  A. Fue traída a Europa en el siglo diez por sus propiedades medicinales.
+  B. Se ha usado desde el siglo dieciocho para elaborar perfumes y jabones por su aroma a limón.
+  C. Ninguna es correcta."
 
   utter_info_curiosities_hierbaluisa:
   - text: "Esta planta cuenta con una historia singular en el Jardín, ya que el nombre del género 

@@ -68,6 +68,12 @@ nlu:
     - casi que no
     - prefiero que no
 
+- intent: select_c
+  examples: |
+    - la c
+    - c
+    - opción c
+
 - intent: select_alcanforero
   examples: |
     - me gustaría consultarte acerca del alcanforero

@@ -22,6 +22,19 @@ stories:
   - intent: deny
   - action: utter_no_explain_select
 
+- story: ask about another plant
+  steps:
+  - checkpoint: ask_about_another_or_end
+  - intent: affirm
+  - action: utter_select_plant
+
+- story: no ask about another plant
+  steps:
+  - checkpoint: ask_about_another_or_end
+  - intent: deny
+  - action: utter_end_conversation
+  
+
 - story: selecting alcanforero and its aspect
   steps:
   - intent: select_alcanforero
@@ -162,9 +175,19 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_tomillo
+  - action: utter_ask_game
+  - checkpoint: tomillo_aspect_game
+
+- story: question about the aspect of tomillo
+  steps:
+  - checkpoint: tomillo_aspect_game
+  - intent: affirm
+  - action: utter_game_aspect_tomillo
+  - intent: select_c
+  - action: utter_congratulations
   - action: utter_end
-  - action: utter_goodbye
-  
+  - checkpoint: ask_about_another_or_end
+
 - story: selecting tomillo and its products
   steps:
   - intent: select_tomillo
@@ -217,8 +240,15 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_liquidambar
+  - action: utter_ask_game
+  - checkpoint: liquidambar_curiosities_game
+
+- story: question about the curiosities of liquidambar
+  steps:
+  - checkpoint: liquidambar_curiosities_game
+  - intent: deny
   - action: utter_end
-  - action: utter_goodbye
+  - checkpoint: ask_about_another_or_end
 
 - story: selecting sabina and its aspect
   steps:
@@ -305,8 +335,15 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_hierbaluisa
+  - action: utter_ask_game
+  - checkpoint: hierbaluisa_products_game
+
+- story: question about the products of hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_products_game
+  - intent: deny
   - action: utter_end
-  - action: utter_goodbye
+  - checkpoint: ask_about_another_or_end
    
 - story: selecting hierbaluisa and its curiosities
   steps:
