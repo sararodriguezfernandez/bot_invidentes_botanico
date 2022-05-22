@@ -19,99 +19,124 @@ intents:
   - select_espliego
   - select_aspect
   - select_products
+  - ask_plants
   - select_curiosities
+  - select_a
+  - select_b
+  - select_c
+  
 responses:
+ #Saludos del chatbot
   utter_greet:
   - text: "Hola, soy el chatbot del Real Jardín Botánico de Madrid diseñado para acompañarte en el recorrido de las plantas aromáticas."
   - text: "Saludos, soy un chatbot del Real Jardín Botánico de Madrid, que te acompañará en el recorrido de las plantas aromáticas."
   - text: "Hola, soy el chatbot del Real Jardín Botánico de Madrid y estoy encantado de poder acompañarte en el recorrido de las plantas aromáticas."
-
+ 
+ #Formas de despedirse del chatbot por si el usuario se despide
   utter_goodbye:
   - text: "Adiós."
   - text: "Hasta pronto."
   - text: "Hasta la próxima."
   - text: "Hasta luego."
   - text: "Hasta la vista."
-
-  utter_end_ask_game:
+  
+  #Pregunta del chatbot por si el usuario desea jugar para comprobar lo que ha aprendido
+  utter_ask_game:
   - text: "Espero haber podido ayudarte. ¿Quieres jugar para comprobar lo que has aprendido acerca de esta planta?"
-
+  
+  #Preunta del chatbot al finalizar, para que el usuario pueda preguntar acerca de otra planta si lo desea
   utter_ask_another_plant:
   - text: "Y bien, ¿deseas saber algo más acerca de alguna planta del recorrido?"
+  - text: "Y bien, ¿te gustaría saber algo más acerca de alguna planta del recorrido?"
 
+  #Despedida del chatbot, una vez que el usuario no quiere preguntar más
   utter_end_conversation:
-  - text: "De acuerdo. Muchas gracias por dejarme participar en tuexperiencia. Si necesitas cualquier cosa, solo has de saludarme y estaré disponible para ti."
-
+  - text: "Espero haber podido ayudarte. No dudes en consultarme si deseas saber más, 
+  recuerda que solo has de saludarme y estaré disponible. Gracias por dejarme participar 
+  en tu experiencia"
+  
+  #Menú inicial, donde el chatbot le pregunta al usuario, si desea saber la explicación de cómo utilizarlo o no
   utter_menu:
-  - text: "¿Sabes cómo funciono o prefieres que te lo explique?. Puedes responderme Sí, en caso de que quieras que te lo explique, o No, en caso contrario."
-    
-  utter_explain:
-  - text: "Soy un bot que te acompañará y ayudará en tu visita de forma personalen el recorrido de las plantas aromáticas, que incluye a el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego. Primero has de decirme que quieres consultarme acerca de una especie incluyendo su nombre. Por ejemplo, si quisieras consultarme acerca del tomillo podrías decirme: “Me gustaría consultarte acerca del tomillo”. Después, cuando te pregunte podrás decirme acerca de lo que quieres preguntar. Para todas las plantas podrás preguntarme acerca de su descripción física o aspecto, los productos que se obtienen de ella o alguna curiosidad de esa planta. En este caso, podrías decirme, por ejemplo: “Quiero saber su aspecto”. "
+  - text: "¿Sabes cómo funciono o prefieres que te lo explique?. Puedes responderme Sí, 
+  en caso de que quieras que te lo explique, o No, en caso contrario."
 
+  #Explicación del chatbot de su funcionamiento y cómo usarlo  
+  utter_explain:
+  - text: "Soy un bot que te acompañará y ayudará en tu visita de forma personal en el recorrido de las plantas aromáticas, 
+  que incluye a el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, 
+  el laurel, la hierbaluisa y el espliego. Primero has de decirme que quieres consultarme acerca de una especie incluyendo su nombre. 
+  Por ejemplo, si quisieras consultarme acerca del tomillo podrías decirme: “Me gustaría consultarte acerca del tomillo”. Después, 
+  cuando te pregunte podrás decirme acerca de lo que quieres preguntar. Para todas las plantas podrás preguntarme acerca de su 
+  descripción física o aspecto, los productos que se obtienen de ella o alguna curiosidad de esa planta. En este caso, podrías 
+  decirme, por ejemplo: “Quiero saber su aspecto”. "
+  
+  #Explicación de lo que ha de hacer el usuario en el juego
   utter_explain_game:
   - text: "Estupendo. A continuación, vamos a comprobar si has estado atento a lo que te he explicado.
   Te daré tres opciones A, B o C, y solo has de decirme A, B o C seleccionando la que crees que es la correcta. "
-
-  utter_end_explain_select_plant:
+  
+  #Pregunta del chatbot para elegir especie, si se ha elegido la opción del menú de la explicación
+  utter_end_explain_select:
   - text: "Así que, ¿qué especie eliges?"
   - text: "Entonces, ¿acerca de qué planta quieres consultarme?"
   - text: "Y bien, ¿qué especie te gustaría conocer?"
 
-  utter_congratulations:
-  - text: "Enhorabuena. Has acertado, así que has estado atento a mi explicación. ¡Te felicito!"
-
+  #Pregunta del chatbot para elegir especie, si no se ha realizado la explicación o se elige preguntar al final más
   utter_select_plant:
   - text: "De acuerdo. Entonces, ¿qué planta eliges?"
   - text: "Vale. Entonces, ¿qué planta te gustaría conocer?"
   - text: "De acuerdo. ¿Sobre qué planta te gustaría preguntar?"
 
+  #Pregunta del chatbot para que el usuario seleccione la categoría acerca de la que quiere preguntar
   utter_select_category:
   - text: "¿Qué te gustaría saber acerca de esta planta?. Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
   - text: "¿Qué te gustaría que te contase acerca de esta planta?. Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
-  - text: "Y bien, ¿qué quieres saber?.Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
+  - text: "Y bien, ¿qué quieres saber?. Recuerda que puedes preguntar sobre su aspecto, productos o curiosidades."
 
+  #Comprobaciones del chatbot de que ha entendido bien la planta, o por si el usuario decide cambiar o se ha confundido
   utter_select_alcanforero:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el alcanforero. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el alcanforero?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el alcanforero. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el alcanforero?. "
 
   utter_select_naranjo:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el naranjo amargo. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el naranjo amargo?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el naranjo amargo. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el naranjo amargo?. "
 
   utter_select_jazmin:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el jazmín. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el jazmín?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el jazmín. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el jazmín?. "
 
   utter_select_salvia:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es la salvia. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la salvia?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la salvia. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la salvia?. "
 
   utter_select_tomillo:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el tomillo. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el tomillo?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el tomillo. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el tomillo?. "
 
   utter_select_liquidambar:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el liquidámbar. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el liquidámbar?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el liquidámbar. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el liquidámbar?. "
 
   utter_select_sabina:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es la sabina de Cartagena. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la sabina de Cartagena?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la sabina de cartagena. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la sabina de cartagena?. "
 
   utter_select_laurel:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el laurel. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el laurel?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el laurel. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el laurel?. "
 
   utter_select_hierbaluisa:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es la hierbaluisa.
-   ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es 
-  la hierbaluisa?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es la hierbaluisa. ¿Es correcto?. "
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es la hierbaluisa?. "
 
   utter_select_espliego:
-  - text: "He entendido que la planta acerca de la que te gustaría consultar es el espliego. ¿Es correcto?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
-  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el espliego?. Puedes responderme Sí, en caso correcto, o No, en caso contrario."
+  - text: "He entendido que la planta acerca de la que te gustaría consultar es el espliego. ¿Es correcto?."
+  - text: "¿Puedes confirmarme que la planta acerca de la cual te gustaría consultarme es el espliego?. "
 
+
+  #Información que proporciona el chatbot de cada categoría de cada planta, con el juego asociado a cada categoría y
+  #la respuesta correcta para decírsela al usuario si falla.
   utter_info_aspect_alcanforero:
   - text: "El alcanforero se trata de un árbol de hoja perenne, de hasta más de treinta metros de altura. 
   Sus hojas son ovadas o elípticas, de color verde brillante y terminan en punta. Sus flores están dispuestas en grupos y
@@ -119,9 +144,12 @@ responses:
 
   utter_game_aspect_alcanforero:
   - text: "El alcanforero puede medir.... 
-  A. Hasta diez metros de altura.
-  B. Hasta treinta metros de altura.
+  A. Hasta treinta metros de altura.
+  B. Hasta diez metros de altura.
   C. Hasta cincuenta metros de altura."
+
+  utter_aspect_alcanforero_correct:
+  - text: "La respuesta correcta era la A, el alcanforero puede medir hasta treinta metros de altura."
 
   utter_info_products_alcanforero:
   - text: "Del alcanforero se obtiene un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor, 
@@ -129,10 +157,14 @@ responses:
   produce unas tres toneladas."
   
   utter_game_products_alcanforero:
-  - text: "Al destilar la madera o las raíces del alcanfor se obtiene.... 
+  - text: "Al destilar la madera o las raíces del alcanfor, se obtiene.... 
   A. Un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor.
   B. Un aceite y una sustancia roja y cristalina muy aromática, llamada azahar.
   C. Una sustancia azul."
+
+  utter_products_alcanforero_correct:
+  - text: "La respuesta correcta era la A, al destilar la madera o las raíces del alcanfor, se obtiene
+  un aceite y una sustancia blanca y cristalina muy aromática, llamada alcanfor."
 
   utter_info_curiosities_alcanforero:
   - text: "El alcanfor ha sido usado desde la antigüedad, ya que existen menciones de él en sánscrito, 
@@ -142,9 +174,12 @@ responses:
 
   utter_game_curiosities_alcanforero:
   - text: "¿Para qué se usaban el alcanforero los egipcios?
-  A. Para cocinar.
-  B. Para embalsamar cadáveres.
-  C. No se usaba en la antigüedad."
+  A. Para embalsamar cadáveres.
+  B. Para cocinar.
+  C. No se usaba en la Antigüedad."
+
+  utter_curiosities_alcanforero_correct:
+  - text: "La respuesta correcta era la A, los egipcios lo empleaban para embalsamar cadáveres."
 
   utter_info_aspect_naranjo:
   - text: "El naranjo amargo es un árbol de hoja perfumada, perenne y con forma de lanza.
@@ -157,6 +192,9 @@ responses:
   B. Naranjas comestibles por su dulzor.
   C. Flores naranjas."
 
+  utter_aspect_naranjo_correct:
+  - text: "La respuesta correcta era la A, el naranjo amargo tiene flores blancas con un fuerte aroma." 
+
   utter_info_products_naranjo:
   - text: "De las flores del naranjo, llamadas flores de azahar, se obtiene una sustancia denominada neroli,
   usada en aguas de colonia, perfumes y jabones. Además, el agua de azahar es un apreciado ingrediente utilizado 
@@ -168,6 +206,10 @@ responses:
   B. No se puede usar.
   C. La Antigüedad."
 
+  utter_products_naranjo_correct:
+  - text: "La respuesta correcta era la A, de las flores del naranjo, se obtiene una sustancia 
+  usada en aguas de colonia, perfumes y jabones." 
+
   utter_info_curiosities_naranjo:
   - text: "El naranjo amargo fue difundido por los árabes y llegó a la Península Ibérica hacia el siglo diez, 
   mucho antes que la naranja dulce. Se usó entonces para decorar y perfumar los jardines de Al Ándalus y para 
@@ -176,8 +218,11 @@ responses:
   utter_game_curiosities_naranjo:
   - text: "El naranjo amargo...
   A. Legó a la Península en el sigo diez.
-  B. Legó antes a la Península que la naranja dulce.
+  B. Legó a la Península después de la naranja dulce.
   C. Ambas son correctas."
+
+  utter_curiosities_naranjo_correct:
+  - text: "La respuesta correcta era la A, el naranjo amargo llegó a la Península Ibérica hacia el siglo diez." 
 
   utter_info_aspect_jazmin:
   - text: "El jazmín es un arbusto trepador de color verde y hasta 10 metros. Sus hojas están compuestas por entre
@@ -188,6 +233,9 @@ responses:
   A. Es un arbusto trepador de flores blancas.
   B. Es un árbol de hasta treinta metros.
   C. Ninguna de las anteriores."
+
+  utter_aspect_jazmin_correct:
+  - text: "La respuesta correcta era la A, el jazmín es un arbusto trepador de flores blancas." 
 
   utter_info_products_jazmin:
   - text: "De las flores del jazmín, se obtiene la esencia de jazmín, que es una de las más apreciadas en perfumería. 
@@ -200,6 +248,9 @@ responses:
   B. Se usa en cocina.
   C. Se usaba para embalsamar cadáveres."
 
+  utter_products_jazmin_correct:
+  - text: "La respuesta correcta era la A, la esencia de jazmín se usa en perfumería." 
+
   utter_info_curiosities_jazmin:
   - text: "La esencia de jazmín se obtiene de la cara interna de los pétalos. Para ello se utiliza el método del 
   enflorado, consistente en poner en contacto las flores con un aceite vegetal, normalmente de oliva, 
@@ -211,6 +262,9 @@ responses:
   B. La esencia de azahar.
   C. Ninguna de las anteriores."
 
+  utter_curiosities_jazmin_correct:
+  - text: "La respuesta correcta era la A, del jazmín se obtiene la esencia de jazmín mediante el método del enflorado." 
+
   utter_info_aspect_salvia:
   - text: "La salvia es una planta leñosa de hasta 70 centímetros de altura. Sus hojas son gruesas y rugosas, 
   cubiertas de pelos blanquecinos por el envés, y sus flores de forma tubular y color blanco-violáceo 
@@ -219,8 +273,12 @@ responses:
   utter_game_aspect_salvia:
   - text: "La salvia es...
   A. Una planta leñosa de hojas gruesas y rugosas.
-  B. Una planta leñosa de flores blanco-violáceas.
+  B. Una planta leñosa de flores naranjas.
   C. Ambas son correctas."
+
+  utter_aspect_salvia_correct:
+  - text: "La respuesta correcta era la A, la salvia es una planta leñosa 
+  de hojas gruesas y rugosas." 
 
   utter_info_products_salvia:
   - text: "Las hojas de la salvia se utilizan como conservante de alimentos en industrias cárnicas, 
@@ -232,6 +290,10 @@ responses:
   A. Se usan como conservante y condimento.
   B. No se pueden usar.
   C. Se usan para obtener la esencia de la salvia."
+
+  utter_products_salvia_correct:
+  - text: "La respuesta correcta era la A, las hojas de la salvia se usan como conservante  
+  y condimento." 
 
   utter_info_curiosities_salvia:
   - text: "La salvia ha sido considerada una de las más importantes hierbas medicinales durante miles de años. 
@@ -245,14 +307,20 @@ responses:
   B. A sus propiedades de sabor.
   C. Ninguna de las anteriores."
 
+  utter_curiosities_salvia_correct:
+  - text: "La respuesta correcta era la A, su nombre genérico hace alusión a sus propiedades medicinales." 
+
   utter_info_aspect_tomillo:
   - text: "El tomillo es un pequeño arbusto de flores rosadas y hojas lineares con el margen enrollado hacia el envés."
 
   utter_game_aspect_tomillo:
   - text: "El tomillo es...
   A. Un pequeño arbusto de flores rosadas.
-  B. Un pequeño arbusto de hojas lineares.
+  B. Un pequeño arbusto de hojas similares a las del arce.
   C. Ambas son correctas."
+
+  utter_aspect_tomillo_correct:
+  - text: "La respuesta correcta era la A, el tomillo es un pequeño arbusto de flores rosadas." 
 
   utter_info_products_tomillo:
   - text: "Es una planta muy aromática utilizada tanto en perfumería y jabonería, como en la elaboración de platos 
@@ -261,9 +329,13 @@ responses:
 
   utter_game_products_tomillo:
   - text: "Es una planta usada ...
-  A. En perfumería y jabonería.
-  B. En la elaboración de platos de carnes y pescados.
-  C. Ambas son correctas."
+  A. En perfumería, jabonería y en la elaboración de platos de carnes y pescados.
+  B. Solo en perfumería.
+  C. Solo en la cocina."
+
+  utter_products_tomillo_correct:
+  - text: "La respuesta correcta era la A, es una planta usada en perfumería, jabonería y 
+  en la elaboración de platos de carnes y pescados." 
 
   utter_info_curiosities_tomillo:
   - text: "En el antiguo Egipto se cultivaban especies de tomillo destinadas a perfumar los ungüentos para embalsamar 
@@ -273,8 +345,11 @@ responses:
   utter_game_curiosities_tomillo:
   - text: "El tomillo ...
   A. Fue usado por los egipcios para embalsamar cadáveres.
-  B. Fue usado por los griegos para ambalsamar cadáveres.
+  B. Fue usado por los griegos para embalsamar cadáveres.
   C. Era usado en Al-Ándalus para decorar jardines."
+
+  utter_curiosities_tomillo_correct:
+  - text: "La respuesta correcta era la A, el tomillo fue usado por los egipcios para embalsamar cadáveres" 
 
   utter_info_aspect_liquidambar:
   - text: "El liquidámbar es un árbol de porte piramidal, con una altura máxima de 41 metros. Sus hojas son palmadas
@@ -284,12 +359,15 @@ responses:
   en forma de racimos florales cónicos y las femeninas se reúnen en forma pendular. 
   Su fruto es seco y globoso, con un diámetro de hasta cuatro centímetros."
 
-  
   utter_game_aspect_liquidambar:
   - text: "El liquidámbar ...
-  A. Es un árbol de hasta 41 metros de altura.
-  B. Es un árbol de hojas palmadas y lobuladas, que recuerdan a las de los arces.
+  A. Es un árbol de hojas palmadas y lobuladas, que recuerdan a las de los arces.
+  B. Es un árbol de hasta setenta metros de altura.
   C. Ambas son correctas."
+
+  utter_aspect_liquidambar_correct:
+  - text: "La respuesta correcta era la A, el liquidámbar es un árbol de hojas palmadas y lobuladas, 
+  que recuerdan a las de los arces." 
 
   utter_info_products_liquidambar:
   - text: "De este árbol, se obtiene una madera de color pardo, brillante y coloreado de rojo. En América, 
@@ -300,8 +378,12 @@ responses:
   utter_game_products_liquidambar:
   - text: "Del liquidámbar ...
   A. Se obtiene una madera de color pardo, brillante y rojiza usada en la fabricación de muebles.
-  B. Se obtiene una resina usada en perfumería.
+  B. Se obtiene una esencia usada en la cocina mediterránea.
   C. Ambas son correctas."
+
+  utter_products_liquidambar_correct:
+  - text: "La respuesta correcta era la A, del liquidámbar se obtiene una madera de color pardo, 
+  brillante y rojiza usada en la fabricación de muebles." 
 
   utter_info_curiosities_liquidambar:
   - text: "El nombre del género es una palabra compuesta, formada por líquido y ámbar , que procede del árabe 
@@ -310,9 +392,12 @@ responses:
 
   utter_game_curiosities_liquidambar:
   - text: "Su resina ...
-  A. Se obtiene de las hojas.
-  B. Se obtiene de la corteza y ya era usada por los aztecas.
+  A. Se obtiene de la corteza y ya era usada por los aztecas.
+  B. Se obtiene de las hojas.
   C. Se obtiene de la corteza y ya era usada por los egipcios."
+
+  utter_curiosities_liquidambar_correct:
+  - text: "La respuesta correcta era la A, su resina se obtiene de la corteza y ya era usada por los aztecas." 
 
   utter_info_aspect_sabina:
   - text: "La sabina de Cartagena es un árbol de hoja persistente que puede llegar a los quince metros de altura. 
@@ -324,8 +409,12 @@ responses:
   utter_game_aspect_sabina:
   - text: "La sabina es un árbol ...
   A. De tronco recto con la corteza estriada y ramillas en todas las direcciones.
-  B. De hojas alargadas, similares a las de los cipreses.
+  B. De flores azuladas.
   C. Ambas son correctas."
+
+  utter_aspect_sabina_correct:
+  - text: "La respuesta correcta era la A, la sabina es un árbol de tronco recto con la corteza 
+  estriada y ramillas en todas las direcciones." 
 
   utter_info_products_sabina:
   - text: "Al sangrar el tronco, se obtiene una resina amarillenta de olor balsámico, llamada sandáraca, 
@@ -334,10 +423,14 @@ responses:
   el norte de África, donde es abundante."
 
   utter_game_products_sabina:
-  - text: "De la sabina se obtiene una resina que es usada ...
+  - text: "De la sabina se obtiene una resina, que es usada ...
   A. En la elaboración de barnices.
   B. Como aderezo en la cocina.
   C. Ninguna es correcta."
+
+  utter_products_sabina_correct:
+  - text: "La respuesta correcta era la A, de la sabina se obtiene una resina, que es usada 
+  en la elaboración de barnices." 
 
   utter_info_curiosities_sabina:
   - text: "Se trata de una reliquia botánica y biogeográfica en toda Europa, encontrándose tan sólo 
@@ -350,6 +443,9 @@ responses:
   B. Una especie muy abundante en toda Europa.
   C. Una especie extinta."
 
+  utter_curiosities_sabina_correct:
+  - text: "La respuesta correcta era la A, la sabina es una especie frecuente en Marruecos, Túnez y Argelia." 
+
   utter_info_aspect_laurel:
   - text: "El laurel es un pequeño árbol de tronco recto, corteza lisa y grisácea de menos de 
   diez metros de altura y hoja perenne, oscura y lanceolada. Hay plantas macho y plantas hembra; 
@@ -360,8 +456,12 @@ responses:
   utter_game_aspect_laurel:
   - text: "El laurel ...
   A. Es un pequeño árbol de tronco recto, corteza lisa y grisácea, de menos de diez metros de altura.
-  B. Es una planta, que contiene aceites esenciales, especialmente en sus hojas.
-  C. Ambas son correctas."
+  B. Es un gran árbol de grandes flores rosadas .
+  C. Ninguna es correcta."
+
+  utter_aspect_laurel_correct:
+  - text: "La respuesta correcta era la A, el laurel es un pequeño árbol de tronco recto, 
+  corteza lisa y grisácea, de menos de diez metros de altura." 
 
   utter_info_products_laurel:
   - text: "El laurel ha sido usado habitualmente en la cocina mediterránea para aderezar multitud de guisos. 
@@ -374,15 +474,22 @@ responses:
   B. Son tóxicas.
   C. Ninguna es correcta."
 
+  utter_products_laurel_correct:
+  - text: "La respuesta correcta era la A, las hojas del laurel se usan como aderezo de guisos." 
+
   utter_info_curiosities_laurel:
   - text: "En la Antigüedad clásica se empleaba el laurel para hacer coronas, como símbolo de triunfo en las 
   victorias de guerra o competiciones deportivas."
 
   utter_game_curiosities_laurel:
-  - text: "El laurel en la Antigüedad clásica ...
+  - text: "El laurel, en la Antigüedad clásica ...
   A. Se empleaba para hacer coronas, como símbolo de triunfo.
   B. Se empleaba para hacer perfumes.
   C. Se empleaba para decorar."
+
+  utter_curiosities_laurel_correct:
+  - text: "La respuesta correcta era la A, en la Antigüedad clásica se empleaba el laurel para hacer coronas, 
+  como símbolo de triunfo." 
 
   utter_info_aspect_hierbaluisa:
   - text: "La hierbaluisa es un arbusto de hoja caduca aromático de hasta dos metros y medio.
@@ -392,8 +499,11 @@ responses:
   utter_game_aspect_hierbaluisa:
   - text: "La hierbaluisa ...
   A. Es un arbusto de hoja caduca de hasta dos metros y medio.
-  B. Tiene flores pequeñas de color violáceo.
+  B. Tiene flores pequeñas de color naranja.
   C. Ambas son correctas."
+
+  utter_aspect_hierbaluisa_correct:
+  - text: "La respuesta correcta era la A, la hierbaluisa es un arbusto de hoja caduca de hasta dos metros y medio." 
 
   utter_info_products_hierbaluisa:
   - text: "La hierbaluisa fue traída a Europa y descrita por los españoles a principios del siglo 
@@ -403,9 +513,13 @@ responses:
 
   utter_game_products_hierbaluisa:
   - text: "La hierbaluisa ...
-  A. Fue traída a Europa en el siglo diez por sus propiedades medicinales.
-  B. Se ha usado desde el siglo dieciocho para elaborar perfumes y jabones por su aroma a limón.
+  A. Se ha usado desde el siglo dieciocho para elaborar perfumes y jabones por su aroma a limón.
+  B. Fue traída a Europa en el siglo diez por sus propiedades medicinales.
   C. Ninguna es correcta."
+
+  utter_products_hierbaluisa_correct:
+  - text: "La respuesta correcta era la A, la hierbaluisa se ha usado desde el siglo
+  dieciocho para elaborar perfumes y jabones por su aroma a limón." 
 
   utter_info_curiosities_hierbaluisa:
   - text: "Esta planta cuenta con una historia singular en el Jardín, ya que el nombre del género 
@@ -413,10 +527,29 @@ responses:
   a la infanta María Luisa de Borbón. Además, el epíteto específico citrodora, 
   hace referencia al olor a limón característico de la savia que resulta al machacar sus tallos o sus hojas."
 
+  utter_game_curiosities_hierbaluisa:
+  - text: "El nombre del género Aloysia fue dedicado a ...
+  A. La infanta María Luisa de Borbón.
+  B. La princesa Leonor de Borbón.
+  C. Ninguna es correcta."
+
+  utter_curiosities_hierbaluisa_correct:
+  - text: "La respuesta correcta era la A, el nombre del género Aloysia fue dedicado a la infanta 
+  María Luisa de Borbón." 
+
   utter_info_aspect_espliego:
   - text: "El espliego es una mata de hasta setenta centímetros de altura, con la base leñosa y los 
   tallos casi herbáceos, con hojas alargadas y estrechas. Sus flores, de forma tubular y color púrpura, 
   se agrupan en espigas al final de los tallos."
+
+  utter_game_aspect_espliego:
+  - text: "El espliego es una mata ...
+  A. De base leñosa y hojas alargadas y estrechas.
+  B. De tallos gruesos.
+  C. Ambas son correctas."
+
+  utter_aspect_espliego_correct:
+  - text: "La respuesta correcta era la A, el espliego es una mata de base leñosa y hojas alargadas y estrechas." 
 
   utter_info_products_espliego:
   - text: "Es una hierba muy popular como insecticida y por su duradero perfume. El aceite esencial 
@@ -424,15 +557,43 @@ responses:
   condimentar ensaladas y se ha consumido, incluso como hierba de puchero. En la actualidad, las hojas
   se utilizan en la cocina del sur de Europa y las flores se pueden emplear para hacer vinagre de espliego"
 
+  utter_game_products_espliego:
+  - text: "El espliego se usa ...
+  A. Como insecticida.
+  B. Como barniz.
+  C. Ambas son correctas."
+
+  utter_products_espliego_correct:
+  - text: "La respuesta correcta era la A, el espliego se usa como insecticida." 
+
   utter_info_curiosities_espliego:
   - text: "El nombre del género deriva del verbo latino lavo (bañar, lavar), en alusión al uso que se hacía 
   de sus flores en la antigua Roma para perfumar el agua de los baños."
+
+  utter_game_curiosities_espliego:
+  - text: "Su nombre deriva del verbo latino lavo, en alusión a ...
+  A. El uso que se hacía de sus flores para perfumar el agua de los baños.
+  B. El uso que se hacía de este como jabón para lavar.
+  C. Ambas son correctas."
+
+  utter_curiosities_espliego_correct:
+  - text: "La respuesta correcta era la A, su nombre deriva del verbo latino lavo, en alusión a
+  el uso que se hacía de sus flores para perfumar el agua de los baños."
 
   utter_repeat:
   - text: "Lo siento, no te he entendido bien. ¿Podrías repetir?"
   - text: "Disculpa, no te he entendido. ¿Podrías repetirlo de otra forma?"
   - text: "Vaya, no te he entendido bien. ¿Te importaría repetírmelo de otra manera?"
 
+  utter_congratulations:
+  - text: "Enhorabuena. Has demostrado que has estado atento a la explicación. ¡Te felicito! "
+
+  utter_list_plants:
+  - text: "Las plantas del recorrido son el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego."
+  
+  utter_incorrect:
+  - text: "Oh.. vaya, no has acertado esta vez, pero seguro que la próxima sí."
+  - text: "Vaya.. parece que no has acertado, pero seguro que la próxima vez aciertas."
 
 
 
