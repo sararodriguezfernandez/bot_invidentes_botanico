@@ -39,6 +39,8 @@ nlu:
 - intent: affirm
   examples: |
     - sí
+    - si
+    - sii
     - afirmativo
     - por supuesto
     - oki
@@ -67,6 +69,18 @@ nlu:
     - creo que no
     - casi que no
     - prefiero que no
+
+- intent: select_a
+  examples: |
+    - la a
+    - a
+    - opción a
+
+- intent: select_b
+  examples: |
+    - la b
+    - b
+    - opción b
 
 - intent: select_c
   examples: |
@@ -347,4 +361,13 @@ nlu:
     - peculiaridades
     - cuéntame curiosidades
     - cuéntame alguna curiosidad
+    
+- intent: ask_plants
+  examples: |
+    - las plantas del recorrido
+    - las plantas aromáticas
+    - ¿puedes recordarme las plantas del recorrido?
+    - ¿qué plantas eran?
+    - ¿sobre qué plantas podía preguntar?
+    - recuérdame las plantas del recorrido
     

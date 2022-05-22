@@ -1,41 +1,47 @@
 version: "3.0"
 
 stories:
-
-- story: start conversation
+#comienzo de la conversación con presentación del chatbot
+- story: comenzar la conversación
   steps:
   - intent: greet
   - action: utter_greet
   - action: utter_menu
   - checkpoint: check_menu
 
-- story: explain
+#explicación de cómo funciona el chatbot seguido de selección de planta
+- story: explicar
   steps:
   - checkpoint: check_menu
   - intent: affirm
   - action: utter_explain
   - action: utter_end_explain_select
 
-- story: no explain
+#selección de planta omitiendo la explicación de cómo funciona el chatbot
+- story: omisión de la explicación
   steps:
   - checkpoint: check_menu
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
-- story: ask about another plant
+#selección de una nueva planta al terminar
+- story: preguntar por otra planta
   steps:
   - checkpoint: ask_about_another_or_end
   - intent: affirm
   - action: utter_select_plant
 
-- story: no ask about another plant
+#despedida si el usuario no desea preguntar más
+- story: no preguntar por niguna planta más
   steps:
   - checkpoint: ask_about_another_or_end
   - intent: deny
   - action: utter_end_conversation
   
-
-- story: selecting alcanforero and its aspect
+#historias de explicación de cada categoría de cada planta , con la posibilidad de elegir si jugar
+#al juego correspondiente a cada explicación, la gestión del juego y la posibilidad 
+#la posibilidad de elegir otra planta o finalizar.
+- story: elegir el alcanforero y su aspecto
   steps:
   - intent: select_alcanforero
   - action: utter_select_alcanforero
@@ -43,10 +49,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_alcanforero
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: alcanforero_aspect_game
+
+- story: pregunta sobre el aspecto del alcanforero
+  steps:
+  - checkpoint: alcanforero_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_alcanforero
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre el aspecto del alcanforero con respuesta incorrecta
+  steps:
+  - checkpoint: alcanforero_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_alcanforero
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_alcanforero_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del alcanforero
+  steps:
+  - checkpoint: alcanforero_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting alcanforero and its products
+- story: elegir el alcanforero y sus productos
   steps:
   - intent: select_alcanforero
   - action: utter_select_alcanforero
@@ -54,10 +92,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_alcanforero
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: alcanforero_products_game
+
+- story: pregunta sobre los productos del alcanforero
+  steps:
+  - checkpoint: alcanforero_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_alcanforero
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre los productos del alcanforero con respuesta incorrecta
+  steps:
+  - checkpoint: alcanforero_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_alcanforero
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_alcanforero_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del alcanforero
+  steps:
+  - checkpoint: alcanforero_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting alcanforero and its curiosities
+- story: elegir el alcanforero y sus curiosidades
   steps:
   - intent: select_alcanforero
   - action: utter_select_alcanforero
@@ -65,10 +135,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_alcanforero
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: alcanforero_curiosities_game
+
+- story: pregunta sobre las curiosidades del alcanforero
+  steps:
+  - checkpoint: alcanforero_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_alcanforero
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre las curiosidades del alcanforero con respuesta incorrecta
+  steps:
+  - checkpoint: alcanforero_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_alcanforero
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_alcanforero_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del alcanforero
+  steps:
+  - checkpoint: alcanforero_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting naranjo and its aspect
+- story: elegir el naranjo y su aspecto
   steps:
   - intent: select_naranjo
   - action: utter_select_naranjo
@@ -76,10 +178,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_naranjo
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: naranjo_aspect_game
+
+- story: pregunta sobre el aspecto del naranjo
+  steps:
+  - checkpoint: naranjo_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_naranjo
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre el aspecto del naranjo con respuesta incorrecta
+  steps:
+  - checkpoint: naranjo_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_naranjo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_naranjo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del naranjo
+  steps:
+  - checkpoint: naranjo_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting naranjo and its products
+- story: elegir el naranjo y sus productos
   steps:
   - intent: select_naranjo
   - action: utter_select_naranjo
@@ -87,10 +221,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_naranjo
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: naranjo_products_game
+
+- story: pregunta sobre los productos del naranjo
+  steps:
+  - checkpoint: naranjo_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_naranjo
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre los productos del naranjo con respuesta incorrecta
+  steps:
+  - checkpoint: naranjo_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_naranjo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_naranjo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting naranjo and its curiosities
+- story: no preguntar sobre los productos del naranjo
+  steps:
+  - checkpoint: naranjo_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el naranjo y sus curiosidades
   steps:
   - intent: select_naranjo
   - action: utter_select_naranjo
@@ -98,10 +264,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_naranjo
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: naranjo_curiosities_game
 
-- story: selecting jazmin and its aspect
+- story: pregunta sobre las curiosidades del naranjo
+  steps:
+  - checkpoint: naranjo_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_naranjo
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre las curiosidades del naranjo con respuesta incorrecta
+  steps:
+  - checkpoint: naranjo_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_naranjo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_naranjo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del naranjo
+  steps:
+  - checkpoint: naranjo_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el jazmín y su aspecto
   steps:
   - intent: select_jazmin
   - action: utter_select_jazmin
@@ -109,10 +307,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_jazmin
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: jazmin_aspect_game
+
+- story: pregunta sobre el aspecto del jazmín
+  steps:
+  - checkpoint: jazmin_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_jazmin
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre el aspecto del jazmín con respuesta incorrecta
+  steps:
+  - checkpoint: jazmin_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_jazmin
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_jazmin_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del jazmín
+  steps:
+  - checkpoint: jazmin_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting jazmin and its products
+- story: elegir el jazmín y sus productos
   steps:
   - intent: select_jazmin
   - action: utter_select_jazmin
@@ -120,10 +350,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_jazmin
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: jazmin_products_game
+
+- story: pregunta sobre los productos del jazmín
+  steps:
+  - checkpoint: jazmin_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_jazmin
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre los productos del jazmín con respuesta incorrecta
+  steps:
+  - checkpoint: jazmin_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_jazmin
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_jazmin_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del jazmín
+  steps:
+  - checkpoint: jazmin_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting jazmin and its curiosities
+- story: elegir el jazmín y sus curiosidades
   steps:
   - intent: select_jazmin
   - action: utter_select_jazmin
@@ -131,10 +393,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_jazmin
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: jazmin_curiosities_game
 
-- story: selecting salvia and its aspect
+- story: pregunta sobre las curiosidades del jazmín
+  steps:
+  - checkpoint: jazmin_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_jazmin
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre las curiosidades del jazmín con respuesta incorrecta
+  steps:
+  - checkpoint: jazmin_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_jazmin
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_jazmin_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del jazmín
+  steps:
+  - checkpoint: jazmin_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir la salvia y su aspecto
   steps:
   - intent: select_salvia
   - action: utter_select_salvia
@@ -142,10 +436,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_salvia
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: salvia_aspect_game
+
+- story: pregunta sobre el aspecto de la salvia
+  steps:
+  - checkpoint: salvia_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_salvia
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre el aspecto de la salvia con respuesta incorrecta
+  steps:
+  - checkpoint: salvia_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_salvia
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_salvia_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto de la salvia
+  steps:
+  - checkpoint: salvia_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting salvia and its products
+- story: elegir la salvia y sus productos
   steps:
   - intent: select_salvia
   - action: utter_select_salvia
@@ -153,10 +479,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_salvia
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: salvia_products_game
+
+- story: pregunta sobre los productos de la salvia
+  steps:
+  - checkpoint: salvia_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_salvia
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting salvia and its curiosities
+- story: pregunta sobre los productos de la salvia con respuesta incorrecta
+  steps:
+  - checkpoint: salvia_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_salvia
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_salvia_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos de la salvia
+  steps:
+  - checkpoint: salvia_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir la salvia y sus curiosidades
   steps:
   - intent: select_salvia
   - action: utter_select_salvia
@@ -164,10 +522,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_salvia
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: salvia_curiosities_game
 
-- story: selecting tomillo and its aspect
+- story: pregunta sobre las curiosidades de la salvia
+  steps:
+  - checkpoint: salvia_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_salvia
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: pregunta sobre las curiosidades de la salvia con respuesta incorrecta
+  steps:
+  - checkpoint: salvia_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_salvia
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_salvia_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades de la salvia
+  steps:
+  - checkpoint: salvia_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el tomillo y su aspecto
   steps:
   - intent: select_tomillo
   - action: utter_select_tomillo
@@ -178,17 +568,39 @@ stories:
   - action: utter_ask_game
   - checkpoint: tomillo_aspect_game
 
-- story: question about the aspect of tomillo
+- story:  pregunta sobre el aspecto del tomillo
   steps:
   - checkpoint: tomillo_aspect_game
   - intent: affirm
+  - action: utter_explain_game
   - action: utter_game_aspect_tomillo
-  - intent: select_c
+  - intent: select_a
   - action: utter_congratulations
-  - action: utter_end
+  - action: utter_ask_another_plant
   - checkpoint: ask_about_another_or_end
 
-- story: selecting tomillo and its products
+- story:  pregunta sobre el aspecto del tomillo con respuesta incorrecta
+  steps:
+  - checkpoint: tomillo_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_tomillo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_tomillo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del tomillo
+  steps:
+  - checkpoint: tomillo_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el tomillo y sus productos
   steps:
   - intent: select_tomillo
   - action: utter_select_tomillo
@@ -196,10 +608,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_tomillo
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: tomillo_products_game
+
+- story:  pregunta sobre los productos del tomillo
+  steps:
+  - checkpoint: tomillo_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_tomillo
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos del tomillo con respuesta incorrecta
+  steps:
+  - checkpoint: tomillo_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_tomillo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_tomillo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del tomillo
+  steps:
+  - checkpoint: tomillo_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting tomillo and its curiosities
+- story: elegir el tomillo y sus curiosidades
   steps:
   - intent: select_tomillo
   - action: utter_select_tomillo
@@ -207,10 +651,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_tomillo
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: tomillo_curiosities_game
 
-- story: selecting liquidambar and its aspect
+- story:  pregunta sobre las curiosidades del tomillo
+  steps:
+  - checkpoint: tomillo_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_tomillo
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades del tomillo con respuesta incorrecta
+  steps:
+  - checkpoint: tomillo_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_tomillo
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_tomillo_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del tomillo
+  steps:
+  - checkpoint: tomillo_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el liquidámbar y su aspecto
   steps:
   - intent: select_liquidambar
   - action: utter_select_liquidambar
@@ -218,10 +694,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_liquidambar
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: liquidambar_aspect_game
+
+- story:  pregunta sobre el aspecto del liquidámbar
+  steps:
+  - checkpoint: liquidambar_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_liquidambar
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre el aspecto del liquidámbar con respuesta incorrecta
+  steps:
+  - checkpoint: liquidambar_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_liquidambar
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_liquidambar_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del liquidámbar
+  steps:
+  - checkpoint: liquidambar_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting liquidambar and its products
+- story: elegir el liquidámbar y sus productos
   steps:
   - intent: select_liquidambar
   - action: utter_select_liquidambar
@@ -229,10 +737,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_liquidambar
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: liquidambar_products_game
+
+- story:  pregunta sobre los productos del liquidámbar
+  steps:
+  - checkpoint: liquidambar_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_liquidambar
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos del liquidámbar con respuesta incorrecta
+  steps:
+  - checkpoint: liquidambar_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_liquidambar
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_liquidambar_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del liquidámbar
+  steps:
+  - checkpoint: liquidambar_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting liquidambar and its curiosities
+- story: elegir el liquidámbar y sus curiosidades
   steps:
   - intent: select_liquidambar
   - action: utter_select_liquidambar
@@ -243,14 +783,39 @@ stories:
   - action: utter_ask_game
   - checkpoint: liquidambar_curiosities_game
 
-- story: question about the curiosities of liquidambar
+- story:  pregunta sobre las curiosidades del liquidámbar
+  steps:
+  - checkpoint: liquidambar_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_liquidambar
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades del liquidámbar con respuesta incorrecta
+  steps:
+  - checkpoint: liquidambar_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_liquidambar
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_liquidambar_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del liquidámbar
   steps:
   - checkpoint: liquidambar_curiosities_game
   - intent: deny
-  - action: utter_end
+  - action: utter_ask_another_plant
   - checkpoint: ask_about_another_or_end
 
-- story: selecting sabina and its aspect
+- story: elegir la sabina y su aspecto
   steps:
   - intent: select_sabina
   - action: utter_select_sabina
@@ -258,10 +823,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_sabina
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: sabina_aspect_game
+
+- story:  pregunta sobre el aspecto de la sabina
+  steps:
+  - checkpoint: sabina_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_sabina
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre el aspecto de la sabina con respuesta incorrecta
+  steps:
+  - checkpoint: sabina_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_sabina
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_sabina_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto de la sabina
+  steps:
+  - checkpoint: sabina_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting sabina and its products
+- story: elegir la sabina y sus productos
   steps:
   - intent: select_sabina
   - action: utter_select_sabina
@@ -269,10 +866,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_sabina
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: sabina_products_game
+
+- story:  pregunta sobre los productos de la sabina
+  steps:
+  - checkpoint: sabina_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_sabina
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos de la sabina con respuesta incorrecta
+  steps:
+  - checkpoint: sabina_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_sabina
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_sabina_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos de la sabina
+  steps:
+  - checkpoint: sabina_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting sabina and its curiosities
+- story: elegir la sabina y sus curiosidades
   steps:
   - intent: select_sabina
   - action: utter_select_sabina
@@ -280,10 +909,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_sabina
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: sabina_curiosities_game
 
-- story: selecting laurel and its aspect
+- story:  pregunta sobre las curiosidades de la sabina
+  steps:
+  - checkpoint: sabina_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_sabina
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades de la sabina con respuesta incorrecta
+  steps:
+  - checkpoint: sabina_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_sabina
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_sabina_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades de la sabina
+  steps:
+  - checkpoint: sabina_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el laurel y su aspecto
   steps:
   - intent: select_laurel
   - action: utter_select_laurel
@@ -291,10 +952,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_laurel
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: laurel_aspect_game
+
+- story:  pregunta sobre el aspecto del laurel
+  steps:
+  - checkpoint: laurel_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_laurel
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre el aspecto del laurel con respuesta incorrecta
+  steps:
+  - checkpoint: laurel_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_laurel
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_laurel_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del laurel
+  steps:
+  - checkpoint: laurel_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting laurel and its products
+- story: elegir el laurel y sus productos
   steps:
   - intent: select_laurel
   - action: utter_select_laurel
@@ -302,10 +995,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_laurel
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: laurel_products_game
+
+- story:  pregunta sobre los productos del laurel
+  steps:
+  - checkpoint: laurel_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_laurel
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos del laurel con respuesta incorrecta
+  steps:
+  - checkpoint: laurel_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_laurel
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_laurel_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del laurel
+  steps:
+  - checkpoint: laurel_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting laurel and its curiosities
+- story: elegir el laurel y sus curiosidades
   steps:
   - intent: select_laurel
   - action: utter_select_laurel
@@ -313,10 +1038,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_laurel
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: laurel_curiosities_game
 
-- story: selecting hierbaluisa and its aspect
+- story:  pregunta sobre las curiosidades del laurel
+  steps:
+  - checkpoint: laurel_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_laurel
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades del laurel con respuesta incorrecta
+  steps:
+  - checkpoint: laurel_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_laurel
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_laurel_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del laurel
+  steps:
+  - checkpoint: laurel_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir la hierbaluisa y su aspecto
   steps:
   - intent: select_hierbaluisa
   - action: utter_select_hierbaluisa
@@ -324,10 +1081,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_hierbaluisa
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: hierbaluisa_aspect_game
+
+- story:  pregunta sobre el aspecto de la hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_hierbaluisa
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre el aspecto de la hierbaluisa con respuesta incorrecta
+  steps:
+  - checkpoint: hierbaluisa_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_hierbaluisa
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_hierbaluisa_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto de la hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting hierbaluisa and its products
+- story: elegir la hierbaluisa y sus productos
   steps:
   - intent: select_hierbaluisa
   - action: utter_select_hierbaluisa
@@ -338,14 +1127,39 @@ stories:
   - action: utter_ask_game
   - checkpoint: hierbaluisa_products_game
 
-- story: question about the products of hierbaluisa
+- story:  pregunta sobre los productos de la hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_hierbaluisa
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos de la hierbaluisa con respuesta incorrecta
+  steps:
+  - checkpoint: hierbaluisa_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_hierbaluisa
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_hierbaluisa_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos de la hierbaluisa
   steps:
   - checkpoint: hierbaluisa_products_game
   - intent: deny
-  - action: utter_end
+  - action: utter_ask_another_plant
   - checkpoint: ask_about_another_or_end
    
-- story: selecting hierbaluisa and its curiosities
+- story: elegir la hierbaluisa y sus curiosidades
   steps:
   - intent: select_hierbaluisa
   - action: utter_select_hierbaluisa
@@ -353,10 +1167,42 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_hierbaluisa
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: hierbaluisa_curiosities_game
 
-- story: selecting espliego and its aspect
+- story:  pregunta sobre las curiosidades de la hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_hierbaluisa
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades de la hierbaluisa con respuesta incorrecta
+  steps:
+  - checkpoint: hierbaluisa_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_hierbaluisa
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_hierbaluisa_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades de la hierbaluisa
+  steps:
+  - checkpoint: hierbaluisa_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: elegir el espliego y su aspecto
   steps:
   - intent: select_espliego
   - action: utter_select_espliego
@@ -364,10 +1210,42 @@ stories:
   - action: utter_select_category
   - intent: select_aspect
   - action: utter_info_aspect_espliego
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: espliego_aspect_game
+
+- story:  pregunta sobre el aspecto del espliego
+  steps:
+  - checkpoint: espliego_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_espliego
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre el aspecto del espliego con respuesta incorrecta
+  steps:
+  - checkpoint: espliego_aspect_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_aspect_espliego
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_aspect_espliego_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre el aspecto del espliego
+  steps:
+  - checkpoint: espliego_aspect_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
   
-- story: selecting espliego and its products
+- story: elegir el espliego y sus productos
   steps:
   - intent: select_espliego
   - action: utter_select_espliego
@@ -375,10 +1253,42 @@ stories:
   - action: utter_select_category
   - intent: select_products
   - action: utter_info_products_espliego
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: espliego_products_game
+
+- story:  pregunta sobre los productos del espliego
+  steps:
+  - checkpoint: espliego_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_espliego
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre los productos del espliego con respuesta incorrecta
+  steps:
+  - checkpoint: espliego_products_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_products_espliego
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_products_espliego_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre los productos del espliego
+  steps:
+  - checkpoint: espliego_products_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
    
-- story: selecting espliego and its curiosities
+- story: elegir el espliego y sus curiosidades
   steps:
   - intent: select_espliego
   - action: utter_select_espliego
@@ -386,78 +1296,111 @@ stories:
   - action: utter_select_category
   - intent: select_curiosities
   - action: utter_info_curiosities_espliego
-  - action: utter_end
-  - action: utter_goodbye
+  - action: utter_ask_game
+  - checkpoint: espliego_curiosities_game
 
+- story:  pregunta sobre las curiosidades del espliego
+  steps:
+  - checkpoint: espliego_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_espliego
+  - intent: select_a
+  - action: utter_congratulations
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story:  pregunta sobre las curiosidades del espliego con respuesta incorrecta
+  steps:
+  - checkpoint: espliego_curiosities_game
+  - intent: affirm
+  - action: utter_explain_game
+  - action: utter_game_curiosities_espliego
+  - or:
+    - intent: select_b
+    - intent: select_c
+  - action: utter_incorrect
+  - action: utter_curiosities_espliego_correct
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+- story: no preguntar sobre las curiosidades del espliego
+  steps:
+  - checkpoint: espliego_curiosities_game
+  - intent: deny
+  - action: utter_ask_another_plant
+  - checkpoint: ask_about_another_or_end
+
+#gestión en caso de que el bot se confunda de nombre o el usuario quiera cambiar de planta
 - story: selecting alcanforero because of an error
   steps:
   - intent: select_alcanforero
   - action: utter_select_alcanforero
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
   
 - story: selecting naranjo because of an error
   steps:
   - intent: select_naranjo
   - action: utter_select_naranjo
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting jazmin because of an error
   steps:
   - intent: select_jazmin
   - action: utter_select_jazmin
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting salvia because of an error
   steps:
   - intent: select_salvia
   - action: utter_select_salvia
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting tomillo because of an error
   steps:
   - intent: select_tomillo
   - action: utter_select_tomillo
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting liquidambar because of an error
   steps:
   - intent: select_liquidambar
   - action: utter_select_liquidambar
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting sabina because of an error
   steps:
   - intent: select_sabina
   - action: utter_select_sabina
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting laurel because of an error
   steps:
   - intent: select_laurel
   - action: utter_select_laurel
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting hierbaluisa because of an error
   steps:
   - intent: select_hierbaluisa
   - action: utter_select_hierbaluisa
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: selecting espliego because of an error
   steps:
   - intent: select_espliego
   - action: utter_select_espliego
   - intent: deny
-  - action: utter_no_explain_select
+  - action: utter_select_plant
 
 - story: goodbye
   steps:

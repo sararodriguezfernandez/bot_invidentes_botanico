@@ -2,11 +2,12 @@ version: "3.0"
 
 rules:
 
-- rule: repeat
+- rule: repetir
   steps:
   - intent: nlu_fallback
   - action: utter_repeat
-- rule: remind_plants
+
+- rule: recordar las plantas
   steps:
   - intent: ask_plants
   - action: utter_list_plants
