@@ -1,6 +1,7 @@
 version: "3.0"
 
 nlu:
+#Formas de saludar
 - intent: greet
   examples: |
     - hey
@@ -23,7 +24,7 @@ nlu:
     - vamos allá
     - vamos
     - vamos bot
-    
+#Formas de despedirse    
 - intent: goodbye
   examples: |
     - adiós
@@ -35,7 +36,7 @@ nlu:
     - hasta la vista
     - hasta pronto
     - me voy
-
+#Formas de afirmar
 - intent: affirm
   examples: |
     - sí
@@ -54,7 +55,7 @@ nlu:
     - seguro
     - claro que sí
     - de acuerdo
-
+#Formas de negar
 - intent: deny
   examples: |
     - no
@@ -69,7 +70,7 @@ nlu:
     - creo que no
     - casi que no
     - prefiero que no
-
+#Opciones para elegir en el juego
 - intent: select_a
   examples: |
     - la a
@@ -87,7 +88,7 @@ nlu:
     - la c
     - c
     - opción c
-
+#Selección de la especi acerca de la cual se desea preguntar
 - intent: select_alcanforero
   examples: |
     - me gustaría consultarte acerca del alcanforero
@@ -296,7 +297,6 @@ nlu:
     - la especie acerca de la que quiero consultar es la hierbaluisa
     - la especie que me gustaría conocer es la hierbaluisa
 
-
 - intent: select_espliego
   examples: |
     - me gustaría consultarte acerca del espliego
@@ -319,7 +319,7 @@ nlu:
     - la especie de la que quiero saber es el espliego
     - la especie acerca de la que quiero consultar es el espliego
     - la especie que me gustaría conocer es el espliego
-
+#Selección de categoría acerca de la que se desea preguntar
 - intent: select_aspect
   examples: |
     - me gustaría consultarte acerca de su aspecto
@@ -361,7 +361,7 @@ nlu:
     - peculiaridades
     - cuéntame curiosidades
     - cuéntame alguna curiosidad
-    
+#Posibles formas de pedirle al bot que recuerde el listado de plantas del recorrido   
 - intent: ask_plants
   examples: |
     - las plantas del recorrido

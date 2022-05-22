@@ -579,21 +579,22 @@ responses:
   utter_curiosities_espliego_correct:
   - text: "La respuesta correcta era la A, su nombre deriva del verbo latino lavo, en alusión a
   el uso que se hacía de sus flores para perfumar el agua de los baños."
-
+  #Petición de repitición al usuario en caso de no haberlo entendido
   utter_repeat:
   - text: "Lo siento, no te he entendido bien. ¿Podrías repetir?"
   - text: "Disculpa, no te he entendido. ¿Podrías repetirlo de otra forma?"
   - text: "Vaya, no te he entendido bien. ¿Te importaría repetírmelo de otra manera?"
-
+  #Felicitación en caso de haber acertado en el juego
   utter_congratulations:
   - text: "Enhorabuena. Has demostrado que has estado atento a la explicación. ¡Te felicito! "
-
-  utter_list_plants:
-  - text: "Las plantas del recorrido son el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego."
-  
+  #Mensaje en caso de respuesta incorrecta en el juego
   utter_incorrect:
   - text: "Oh.. vaya, no has acertado esta vez, pero seguro que la próxima sí."
   - text: "Vaya.. parece que no has acertado, pero seguro que la próxima vez aciertas."
+  #Recordatorio del listado de plantas del recorrido
+  utter_list_plants:
+  - text: "Las plantas del recorrido son el alcanforero, el naranjo amargo, el jazmín, la salvia, el tomillo, el liquidámbar, la sabina de Cartagena, el laurel, la hierbaluisa y el espliego."
+ 
 
 
 

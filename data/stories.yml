@@ -1,7 +1,7 @@
 version: "3.0"
 
 stories:
-#comienzo de la conversación con presentación del chatbot
+#Comienzo de la conversación con presentación del chatbot
 - story: comenzar la conversación
   steps:
   - intent: greet
@@ -9,7 +9,7 @@ stories:
   - action: utter_menu
   - checkpoint: check_menu
 
-#explicación de cómo funciona el chatbot seguido de selección de planta
+#Explicación de cómo funciona el chatbot seguido de selección de planta
 - story: explicar
   steps:
   - checkpoint: check_menu
@@ -17,28 +17,28 @@ stories:
   - action: utter_explain
   - action: utter_end_explain_select
 
-#selección de planta omitiendo la explicación de cómo funciona el chatbot
+#Selección de planta omitiendo la explicación de cómo funciona el chatbot
 - story: omisión de la explicación
   steps:
   - checkpoint: check_menu
   - intent: deny
   - action: utter_select_plant
 
-#selección de una nueva planta al terminar
+#Selección de una nueva planta al terminar
 - story: preguntar por otra planta
   steps:
   - checkpoint: ask_about_another_or_end
   - intent: affirm
   - action: utter_select_plant
 
-#despedida si el usuario no desea preguntar más
+#Despedida si el usuario no desea preguntar más
 - story: no preguntar por niguna planta más
   steps:
   - checkpoint: ask_about_another_or_end
   - intent: deny
   - action: utter_end_conversation
   
-#historias de explicación de cada categoría de cada planta , con la posibilidad de elegir si jugar
+#Historias de explicación de cada categoría de cada planta , con la posibilidad de elegir si jugar
 #al juego correspondiente a cada explicación, la gestión del juego y la posibilidad 
 #la posibilidad de elegir otra planta o finalizar.
 - story: elegir el alcanforero y su aspecto
@@ -1331,78 +1331,78 @@ stories:
   - action: utter_ask_another_plant
   - checkpoint: ask_about_another_or_end
 
-#gestión en caso de que el bot se confunda de nombre o el usuario quiera cambiar de planta
-- story: selecting alcanforero because of an error
+#Gestión en caso de que el bot se confunda de nombre o el usuario quiera cambiar de planta
+- story: elegir el alcanforero por error
   steps:
   - intent: select_alcanforero
   - action: utter_select_alcanforero
   - intent: deny
   - action: utter_select_plant
   
-- story: selecting naranjo because of an error
+- story: elegir el naranjo por error
   steps:
   - intent: select_naranjo
   - action: utter_select_naranjo
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting jazmin because of an error
+- story: elegir el jazmín por error
   steps:
   - intent: select_jazmin
   - action: utter_select_jazmin
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting salvia because of an error
+- story: elegir la salvia por error
   steps:
   - intent: select_salvia
   - action: utter_select_salvia
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting tomillo because of an error
+- story: elegir el tomillo por error
   steps:
   - intent: select_tomillo
   - action: utter_select_tomillo
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting liquidambar because of an error
+- story: elegir el liquidámbar por error
   steps:
   - intent: select_liquidambar
   - action: utter_select_liquidambar
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting sabina because of an error
+- story: elegir la sabina because por error
   steps:
   - intent: select_sabina
   - action: utter_select_sabina
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting laurel because of an error
+- story: elegir el laurel por error
   steps:
   - intent: select_laurel
   - action: utter_select_laurel
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting hierbaluisa because of an error
+- story: elegir la hierbaluisa por error
   steps:
   - intent: select_hierbaluisa
   - action: utter_select_hierbaluisa
   - intent: deny
   - action: utter_select_plant
 
-- story: selecting espliego because of an error
+- story: elegir el espliego por error
   steps:
   - intent: select_espliego
   - action: utter_select_espliego
   - intent: deny
   - action: utter_select_plant
-
-- story: goodbye
+#Despedida en cualquier momento si el usuario se despide
+- story: despedirse
   steps:
   - intent: goodbye
   - action: utter_goodbye
